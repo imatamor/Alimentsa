@@ -1,0 +1,3244 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-fix.css" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <title>Alimentsa</title>
+</head>
+
+<body>
+
+
+    <div class="login">   
+      <img class="logo" src="images/logo-alimentsa.png" >
+      <form id="formLogin">
+      <input id="txt_user" type="text" placeholder="Usuario" />
+      <input id="txt_pass" type="password" placeholder="Contraseña" />
+      <input id="loginButton" type="submit" value="INGRESAR" />
+      </form>
+      <div class="login-loading">Autenticando...</div>
+      <div class="login-error">Error de autenticación, por favor comuníquese con Alimentsa para usar esta APP. Gracias.</div>
+    </div>
+
+    <div class="content-wrapper">
+      <div class="content-fix-top"></div>
+      <div class="content-panel">
+        <!--
+          ====================== CALCULADORAS =============================
+        -->
+        <!--
+          Lista Calculadoras
+        -->
+        <div id="list-calculators" class="ContentView">
+          <div class="ListView">
+            <div class="ListViewItem" onclick="hideAllAndShow('talla-camaron')">
+              <div class="row">
+                <div class="col-xs-10">
+                  <span class="ListViewItemText">Talla del camarón</span>
+                </div>
+                <div class="col-xs-2 text-right">
+                  <span class="glyphicon glyphicon-menu-right ListViewItemArrow" aria-hidden="true"></span>
+                </div>
+                <div class="col-xs-12 ListViewItemSeparator"></div>
+              </div>
+            </div>
+            <div class="ListViewItem" onclick="hideAllAndShow('parametros-agua')">
+              <div class="row">
+                <div class="col-xs-10">
+                  <span class="ListViewItemText">Parámetros de Agua</span>
+                </div>
+                <div class="col-xs-2 text-right">
+                  <span class="glyphicon glyphicon-menu-right ListViewItemArrow" aria-hidden="true"></span>
+                </div>
+                <div class="col-xs-12 ListViewItemSeparator"></div>
+              </div>
+            </div>
+            <div class="ListViewItem" onclick="hideAllAndShow('parametros-suelo')">
+              <div class="row">
+                <div class="col-xs-10">
+                  <span class="ListViewItemText">Parámetros de Suelo</span>
+                </div>
+                <div class="col-xs-2 text-right">
+                  <span class="glyphicon glyphicon-menu-right ListViewItemArrow" aria-hidden="true"></span>
+                </div>
+                <div class="col-xs-12 ListViewItemSeparator"></div>
+              </div>
+            </div>
+            <div class="ListViewItem" onclick="hideAllAndShow('calculadora-biomasa')">
+              <div class="row">
+                <div class="col-xs-10">
+                  <span class="ListViewItemText">Calculadora de Biomasa</span>
+                </div>
+                <div class="col-xs-2 text-right">
+                  <span class="glyphicon glyphicon-menu-right ListViewItemArrow" aria-hidden="true"></span>
+                </div>
+                <div class="col-xs-12 ListViewItemSeparator"></div>
+              </div>
+            </div>
+            <div class="ListViewItem" onclick="hideAllAndShow('calculadora-sobrevivencia')">
+              <div class="row">
+                <div class="col-xs-10">
+                  <span class="ListViewItemText">Calculadora de Sobrevivencia</span>
+                </div>
+                <div class="col-xs-2 text-right">
+                  <span class="glyphicon glyphicon-menu-right ListViewItemArrow" aria-hidden="true"></span>
+                </div>
+                <div class="col-xs-12 ListViewItemSeparator"></div>
+              </div>
+            </div>
+            <!--
+            <div class="ListViewItem" onclick="hideAllAndShow('calculadora-peso')">
+              <div class="row">
+                <div class="col-xs-10">
+                  <span class="ListViewItemText">Calculadora de Peso</span>
+                </div>
+                <div class="col-xs-2 text-right">
+                  <span class="glyphicon glyphicon-menu-right ListViewItemArrow" aria-hidden="true"></span>
+                </div>
+                <div class="col-xs-12 ListViewItemSeparator"></div>
+              </div>
+            </div>
+
+            <div class="ListViewItem" onclick="hideAllAndShow('calculadora-densidad')">
+              <div class="row">
+                <div class="col-xs-10">
+                  <span class="ListViewItemText">Calculadora de Densidad</span>
+                </div>
+                <div class="col-xs-2 text-right">
+                  <span class="glyphicon glyphicon-menu-right ListViewItemArrow" aria-hidden="true"></span>
+                </div>
+                <div class="col-xs-12 ListViewItemSeparator"></div>
+              </div>
+            </div>
+          -->
+            <div class="ListViewItem" onclick="hideAllAndShow('calculadora-consumo-balanceado')">
+              <div class="row">
+                <div class="col-xs-10">
+                  <span class="ListViewItemText">Calculadora de Consumo de Alimento</span>
+                </div>
+                <div class="col-xs-2 text-right">
+                  <span class="glyphicon glyphicon-menu-right ListViewItemArrow" aria-hidden="true"></span>
+                </div>
+                <div class="col-xs-12 ListViewItemSeparator"></div>
+              </div>
+            </div>
+            <div class="ListViewItem" onclick="hideAllAndShow('calculadora-extraprime')">
+              <div class="row">
+                <div class="col-xs-10">
+                  <span class="ListViewItemText">Calculadora EXTRAPRIME</span>
+                </div>
+                <div class="col-xs-2 text-right">
+                  <span class="glyphicon glyphicon-menu-right ListViewItemArrow" aria-hidden="true"></span>
+                </div>
+                <div class="col-xs-12 ListViewItemSeparator"></div>
+              </div>
+            </div>
+            <div class="ListViewItem" onclick="hideAllAndShow('calculadora-elmolino')">
+              <div class="row">
+                <div class="col-xs-10">
+                  <span class="ListViewItemText">Calculadora EL MOLINO</span>
+                </div>
+                <div class="col-xs-2 text-right">
+                  <span class="glyphicon glyphicon-menu-right ListViewItemArrow" aria-hidden="true"></span>
+                </div>
+                <div class="col-xs-12 ListViewItemSeparator"></div>
+              </div>
+            </div>
+            <div class="ListViewItem" onclick="hideAllAndShow('calculadora-raceways')">
+              <div class="row">
+                <div class="col-xs-10">
+                  <span class="ListViewItemText">Calculadora RACEWAYS</span>
+                </div>
+                <div class="col-xs-2 text-right">
+                  <span class="glyphicon glyphicon-menu-right ListViewItemArrow" aria-hidden="true"></span>
+                </div>
+                <div class="col-xs-12 ListViewItemSeparator"></div>
+              </div>
+            </div>
+            <div class="ListViewItem" onclick="hideAllAndShow('calculadora-hectarea-dia')">
+              <div class="row">
+                <div class="col-xs-10">
+                  <span class="ListViewItemText">Calculadora de Utilidad Hectárea día</span>
+                </div>
+                <div class="col-xs-2 text-right">
+                  <span class="glyphicon glyphicon-menu-right ListViewItemArrow" aria-hidden="true"></span>
+                </div>
+                <div class="col-xs-12 ListViewItemSeparator"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--
+          Calculadora Biomasa
+        -->
+        <div id="calculadora-biomasa" class="ContentView">
+          <div class="TitleView">
+            CALCULADORA DE BIOMASA
+          </div>
+            <div class="card card-3">
+                <br/>
+                <fieldset>
+                  <!-- Text input-->
+                  <div class="form-group row">
+                    <label class="col-xs-5 control-label padding-for-label" for="textinput">Densidad:</label>
+                      <div class="col-xs-1"></div>
+                    <div class="col-xs-5">
+                    <input id="biomasa_densidad" name="textinput" placeholder="ej: 100000" type="number" class="form-control input-md" type="text">
+                    <span class="help-block">Animales por hectárea</span>
+                    </div>
+                  </div>
+                  <!-- Text input-->
+                  <div class="form-group row">
+                    <label class="col-xs-5 control-label padding-for-label" for="textinput">Hectáreas:</label>
+                      <div class="col-xs-1"></div>
+                    <div class="col-xs-5">
+                    <input id="biomasa_hectareas" name="textinput" placeholder="ej: 5" type="number" class="form-control input-md" type="text">
+                    <span class="help-block">Hectáreas (ha)</span>
+                    </div>
+                  </div>
+                  <!-- Text input-->
+                  <div class="form-group row">
+                    <label class="col-xs-5 control-label padding-for-label" for="textinput">Peso:</label>
+                      <div class="col-xs-1"></div>
+                    <div class="col-xs-5">
+                    <input id="biomasa_peso" name="textinput" placeholder="ej: 19" type="number" class="form-control input-md" type="text">
+                    <span class="help-block">gramos (g)</span>
+                    </div>
+                  </div>
+                  <!-- Text input-->
+                  <div class="form-group row">
+                    <label class="col-xs-5 control-label padding-for-label" for="textinput">Sobrevivencia:</label>
+                      <div class="col-xs-1"></div>
+                    <div class="col-xs-5">
+                    <input id="biomasa_sobrevivencia" name="textinput" placeholder="ej: 60" type="number" class="form-control input-md" type="text">
+                    <span class="help-block">Porcentaje (%)</span>
+                    </div>
+                  </div>
+                </fieldset>
+            </div>
+            <div class="row">
+              <div class="col-xs-12 text-center">
+                <button id="button-calculadora-biomasa" type="button" class="btn btn-primary main-button-margins">Calcular</button>
+              </div>
+            </div>
+        </div>
+
+
+        <!--
+          Resultados Biomasa
+        -->
+        <div id="respuesta-calculadora-biomasa" class="ContentView">
+          <div class="TitleView">
+            CALCULADORA DE BIOMASA
+          </div>
+            <div class="card card-3 no-padding">
+                <div class="title-card">
+                  Libras totales
+                </div>
+                <div id="result_calculadora_biomasa" class="result">
+                  0
+                </div>
+            </div>
+            <!--
+            <div class="card card-3 no-padding" style="display:block">
+                <div class="title-card">
+                  Alimento por Hectárea diaria
+                </div>
+                <div id="result_alimento_hectarea_diaria" class="result">
+                  0
+                </div>
+            </div>
+          -->
+        </div>
+
+
+
+        <!--
+          Calculadora Talla Camaron
+        -->
+        <div id="talla-camaron" class="ContentView">
+          <div class="TitleView">
+            TALLA DEL CAMARON
+          </div>
+
+
+          <br/>
+          <br/>
+
+          <div class="row">
+            <div class="col-xs-12 text-center">
+              <h3 class="title color-primary" style="font-size:1.2em">ENTERO</h3>
+            </div>
+          </div>
+          <div class="table-wrapper">
+                <br/>
+                <div class="row header-sub">
+                  <div class="col-xs-3 text-center">
+                  </div>
+                  <div class="col-xs-9 text-center" style="border-bottom:1px solid #528198;padding-bottom:7px">
+                    Gramos
+                  </div>
+                </div>
+                <div class="row header">
+                  <div class="col-xs-3 text-center" style="border-right:solid 1px #528198">
+                    <span class="clasificacion">Clasificación</span>
+                  </div>
+                  <div class="col-xs-3 text-center" style="border-right:solid 1px #528198">
+                    Desde
+                  </div>
+                  <div class="col-xs-3 text-center" style="border-right:solid 1px #528198">
+                    Hasta
+                  </div>
+                  <div class="col-xs-3 text-center">
+                    Media
+                  </div>
+                </div>
+                <div class="row fila">
+                  <div class="col-xs-3 text-center">
+                    20-30
+                  </div>
+                  <div class="col-xs-3 text-center">
+                    33.33
+                  </div>
+                  <div class="col-xs-3 text-center">
+                    50
+                  </div>
+                  <div class="col-xs-3 text-center">
+                    40
+                  </div>
+                </div>
+                <div class="row fila">
+                  <div class="col-xs-3 text-center">
+                    30-40
+                  </div>
+                  <div class="col-xs-3 text-center">
+                    25
+                  </div>
+                  <div class="col-xs-3 text-center">
+                    33.32
+                  </div>
+                  <div class="col-xs-3 text-center">
+                    28.57
+                  </div>
+                </div>
+                <div class="row fila">
+                  <div class="col-xs-3 text-center">
+                    40-50
+                  </div>
+                  <div class="col-xs-3 text-center">
+                    20
+                  </div>
+                  <div class="col-xs-3 text-center">
+                    24.99
+                  </div>
+                  <div class="col-xs-3 text-center">
+                    22.22
+                  </div>
+                </div>
+                <div class="row fila">
+                  <div class="col-xs-3 text-center">
+                  50-60
+                  </div>
+                  <div class="col-xs-3 text-center">
+                    16.67
+                  </div>
+                  <div class="col-xs-3 text-center">
+                    19.99
+                  </div>
+                  <div class="col-xs-3 text-center">
+                    18.18
+                  </div>
+                </div>
+                <div class="row fila">
+                  <div class="col-xs-3 text-center">
+                    60-70
+                  </div>
+                  <div class="col-xs-3 text-center">
+                    14.28
+                  </div>
+                  <div class="col-xs-3 text-center">
+                    16.65
+                  </div>
+                  <div class="col-xs-3 text-center">
+                    15.38
+                  </div>
+                </div>
+                <div class="row fila">
+                  <div class="col-xs-3 text-center">
+                    70-80
+                  </div>
+                  <div class="col-xs-3 text-center">
+                    12.5
+                  </div>
+                  <div class="col-xs-3 text-center">
+                    14.27
+                  </div>
+                  <div class="col-xs-3 text-center">
+                    13.33
+                  </div>
+                </div>
+          </div>
+
+          <br/>
+          <br/>
+
+          <div class="row">
+            <div class="col-xs-12 text-center">
+              <h3 class="title color-primary" style="font-size:1.2em">COLA</h3>
+            </div>
+          </div>
+          <div class="table-wrapper">
+                <br/>
+                <div class="row header-sub">
+                  <div class="col-xs-3 text-center">
+                  </div>
+                  <div class="col-xs-9 text-center" style="border-bottom:1px solid #528198;padding-bottom:7px">
+                    Gramos
+                  </div>
+                </div>
+                <div class="row header">
+                  <div class="col-xs-3 text-center" style="border-right:solid 1px #528198">
+                    <span class="clasificacion">Clasificación</span>
+                  </div>
+                  <div class="col-xs-3 text-center" style="border-right:solid 1px #528198">
+                    Desde
+                  </div>
+                  <div class="col-xs-3 text-center" style="border-right:solid 1px #528198">
+                    Hasta
+                  </div>
+                  <div class="col-xs-3 text-center">
+                    Media
+                  </div>
+                </div>
+                <div class="row fila">
+                  <div class="col-xs-3 text-center">
+                    16-20
+                  </div>
+                  <div class="col-xs-3 text-center">
+                    31.5
+                  </div>
+                  <div class="col-xs-3 text-center">
+                    40
+                  </div>
+                  <div class="col-xs-3 text-center">
+                    35
+                  </div>
+                </div>
+                <div class="row fila">
+                  <div class="col-xs-3 text-center">
+                    21-25
+                  </div>
+                  <div class="col-xs-3 text-center">
+                    25.6
+                  </div>
+                  <div class="col-xs-3 text-center">
+                    31.33
+                  </div>
+                  <div class="col-xs-3 text-center">
+                    27.5
+                  </div>
+                </div>
+                <div class="row fila">
+                  <div class="col-xs-3 text-center">
+                    26-30
+                  </div>
+                  <div class="col-xs-3 text-center">
+                    21.91
+                  </div>
+                  <div class="col-xs-3 text-center">
+                    25.44
+                  </div>
+                  <div class="col-xs-3 text-center">
+                    23.7
+                  </div>
+                </div>
+                <div class="row fila">
+                  <div class="col-xs-3 text-center">
+                  31-35
+                  </div>
+                  <div class="col-xs-3 text-center">
+                    18.55
+                  </div>
+                  <div class="col-xs-3 text-center">
+                    21.9
+                  </div>
+                  <div class="col-xs-3 text-center">
+                    20.22
+                  </div>
+                </div>
+                <div class="row fila">
+                  <div class="col-xs-3 text-center">
+                    36-40
+                  </div>
+                  <div class="col-xs-3 text-center">
+                    16.55
+                  </div>
+                  <div class="col-xs-3 text-center">
+                    18.54
+                  </div>
+                  <div class="col-xs-3 text-center">
+                    17.54
+                  </div>
+                </div>
+                <div class="row fila">
+                  <div class="col-xs-3 text-center">
+                    41-50
+                  </div>
+                  <div class="col-xs-3 text-center">
+                    13.49
+                  </div>
+                  <div class="col-xs-3 text-center">
+                    16.52
+                  </div>
+                  <div class="col-xs-3 text-center">
+                    15
+                  </div>
+                </div>
+                <div class="row fila">
+                  <div class="col-xs-3 text-center">
+                    51-60
+                  </div>
+                  <div class="col-xs-3 text-center">
+                    11.46
+                  </div>
+                  <div class="col-xs-3 text-center">
+                    13.48
+                  </div>
+                  <div class="col-xs-3 text-center">
+                    12.47
+                  </div>
+                </div>
+          </div>
+
+          <br/>
+          <br/>
+          <br/>
+
+
+        </div>
+
+        <!--
+          Resultados Sobrevivencia
+        -->
+        <div id="respuesta-calculadora-talla-camaron" class="ContentView">
+          <div class="TitleView">
+            CALCULADORA TALLA DEL CAMARON
+          </div>
+            <div class="card card-3 no-padding">
+                <div class="title-card">
+                  Peso (g)
+                </div>
+                <div id="result_calculadora_talla_camaron" class="result">
+                  0
+                </div>
+            </div>
+        </div>
+
+        <!--
+          Calculadora Sobrevivencia
+        -->
+        <div id="calculadora-sobrevivencia" class="ContentView">
+          <div class="TitleView">
+            CALCULADORA DE SOBREVIVENCIA
+          </div>
+            <div class="card card-3">
+                <br/>
+                <fieldset>
+                  <!-- Text input-->
+                  <div class="form-group row">
+                    <label class="col-xs-5 control-label padding-for-label" for="textinput">Libras por hectárea:</label>
+                      <div class="col-xs-1"></div>
+                    <div class="col-xs-5">
+                    <input id="sobrevivencia_libras_hectarea" name="textinput"  placeholder="ej: 3800" type="number" class="form-control input-md" type="text">
+                    <span class="help-block">(lb/ha)</span>
+                    </div>
+                  </div>
+                  <!-- Text input-->
+                  <div class="form-group row">
+                    <label class="col-xs-5 control-label padding-for-label" for="textinput">Densidad:</label>
+                      <div class="col-xs-1"></div>
+                    <div class="col-xs-5">
+                    <input id="sobrevivencia_densidad" name="textinput"  placeholder="ej: 80000" type="number" class="form-control input-md" type="text">
+                    <span class="help-block">Animales por hectárea</span>
+                    </div>
+                  </div>
+                  <!-- Text input-->
+                  <div class="form-group row">
+                    <label class="col-xs-5 control-label padding-for-label" for="textinput">Hectáreas:</label>
+                      <div class="col-xs-1"></div>
+                    <div class="col-xs-5">
+                    <input id="sobrevivencia_hectareas" name="textinput"  placeholder="ej: 2" type="number" class="form-control input-md" type="text">
+                    <span class="help-block">(ha)</span>
+                    </div>
+                  </div>
+                  <!-- Text input-->
+                  <div class="form-group row">
+                    <label class="col-xs-5 control-label padding-for-label" for="textinput">Peso:</label>
+                      <div class="col-xs-1"></div>
+                    <div class="col-xs-5">
+                    <input id="sobrevivencia_peso" name="textinput"  placeholder="ej: 20" type="number" class="form-control input-md" type="text">
+                    <span class="help-block">gramos (g)</span>
+                    </div>
+                  </div>
+                </fieldset>
+            </div>
+            <div class="row">
+              <div class="col-xs-12 text-center">
+                <button id="button-calculadora-sobrevivencia" type="button" class="btn btn-primary main-button-margins">Calcular</button>
+              </div>
+            </div>
+        </div>
+        <!--
+          Resultados Sobrevivencia
+        -->
+        <div id="respuesta-calculadora-sobrevivencia" class="ContentView">
+          <div class="TitleView">
+            CALCULADORA DE SOBREVIVENCIA
+          </div>
+            <div class="card card-3 no-padding">
+                <div class="title-card">
+                  Porcentaje de sobrevivencia
+                </div>
+                <div id="result_calculadora_sobrevivencia" class="result">
+                  0
+                </div>
+            </div>
+        </div>
+
+        <!--
+          Calculadora Peso
+        -->
+        <div id="calculadora-peso" class="ContentView">
+          <div class="TitleView">
+            CALCULADORA DE PESO
+          </div>
+            <div class="card card-3">
+                <br/>
+                <fieldset>
+                  <!-- Text input-->
+                  <div class="form-group row">
+                    <label class="col-xs-5 control-label padding-for-label" for="textinput">Libras por hectárea:</label>
+                      <div class="col-xs-1"></div>
+                    <div class="col-xs-5">
+                    <input id="peso_libras_hectarea" name="textinput"  placeholder="ej: 2560"  type="number" class="form-control input-md" type="text">
+                    <span class="help-block">(lb/ha)</span>
+                    </div>
+                  </div>
+                  <!-- Text input-->
+                  <div class="form-group row">
+                    <label class="col-xs-5 control-label padding-for-label" for="textinput">Densidad:</label>
+                      <div class="col-xs-1"></div>
+                    <div class="col-xs-5">
+                    <input id="peso_densidad" name="textinput"  type="number" placeholder="ej: 120000"  class="form-control input-md" type="text">
+                    <span class="help-block">Animales por hectárea</span>
+                    </div>
+                  </div>
+                  <!-- Text input-->
+                  <div class="form-group row">
+                    <label class="col-xs-5 control-label padding-for-label" for="textinput">Hectáreas:</label>
+                      <div class="col-xs-1"></div>
+                    <div class="col-xs-5">
+                    <input id="peso_hectareas" name="textinput"  type="number" placeholder="ej: 1"  class="form-control input-md" type="text">
+                    <span class="help-block">(ha)</span>
+                    </div>
+                  </div>
+                  <!-- Text input-->
+                  <div class="form-group row">
+                    <label class="col-xs-5 control-label padding-for-label" for="textinput">Sobrevivencia:</label>
+                      <div class="col-xs-1"></div>
+                    <div class="col-xs-5">
+                    <input id="peso_sobrevivencia" name="textinput" placeholder="ej: 65"  type="number" class="form-control input-md" type="text">
+                    <span class="help-block">porcentaje (%)</span>
+                    </div>
+                  </div>
+                </fieldset>
+            </div>
+            <div class="row">
+              <div class="col-xs-12 text-center">
+                <button id="button-calculadora-peso" type="button" class="btn btn-primary main-button-margins">Calcular</button>
+              </div>
+            </div>
+        </div>
+        <!--
+          Resultados Sobrevivencia
+        -->
+        <div id="respuesta-calculadora-peso" class="ContentView">
+          <div class="TitleView">
+            CALCULADORA DE PESO
+          </div>
+            <div class="card card-3 no-padding">
+                <div class="title-card">
+                  Peso (g)
+                </div>
+                <div id="result_calculadora_peso" class="result">
+                  0
+                </div>
+            </div>
+        </div>
+
+        <!--
+          Calculadora Peso
+        -->
+        <div id="calculadora-densidad" class="ContentView">
+          <div class="TitleView">
+            CALCULADORA DE DENSIDAD
+          </div>
+            <div class="card card-3">
+                <br/>
+                <fieldset>
+                  <!-- Text input-->
+                  <div class="form-group row">
+                    <label class="col-xs-5 control-label padding-for-label" for="textinput">Libras por hectárea:</label>
+                      <div class="col-xs-1"></div>
+                    <div class="col-xs-5">
+                    <input id="densidad_libras_hectarea" name="textinput"  placeholder="ej: 3800"  type="number" class="form-control input-md" type="text">
+                    <span class="help-block">(lb/ha)</span>
+                    </div>
+                  </div>
+                  <!-- Text input-->
+                  <div class="form-group row">
+                    <label class="col-xs-5 control-label padding-for-label" for="textinput">Peso:</label>
+                      <div class="col-xs-1"></div>
+                    <div class="col-xs-5">
+                    <input id="densidad_peso" name="textinput"  type="number" placeholder="ej: 28"  class="form-control input-md" type="text">
+                    <span class="help-block">(g)</span>
+                    </div>
+                  </div>
+                  <!-- Text input-->
+                  <div class="form-group row">
+                    <label class="col-xs-5 control-label padding-for-label" for="textinput">Hectáreas:</label>
+                      <div class="col-xs-1"></div>
+                    <div class="col-xs-5">
+                    <input id="densidad_hectareas" name="textinput"  type="number" placeholder="ej: 1"  class="form-control input-md" type="text">
+                    <span class="help-block">(ha)</span>
+                    </div>
+                  </div>
+                  <!-- Text input-->
+                  <div class="form-group row">
+                    <label class="col-xs-5 control-label padding-for-label" for="textinput">Sobrevivencia:</label>
+                      <div class="col-xs-1"></div>
+                    <div class="col-xs-5">
+                    <input id="densidad_sobrevivencia" name="textinput" placeholder="ej: 75"  type="number" class="form-control input-md" type="text">
+                    <span class="help-block">porcentaje (%)</span>
+                    </div>
+                  </div>
+                </fieldset>
+            </div>
+            <div class="row">
+              <div class="col-xs-12 text-center">
+                <button id="button-calculadora-densidad" type="button" class="btn btn-primary main-button-margins">Calcular</button>
+              </div>
+            </div>
+        </div>
+        <!--
+          Resultados Sobrevivencia
+        -->
+        <div id="respuesta-calculadora-densidad" class="ContentView">
+          <div class="TitleView">
+            CALCULADORA DE DENSIDAD
+          </div>
+            <div class="card card-3 no-padding">
+                <div class="title-card">
+                  Densidad
+                </div>
+                <div id="result_calculadora_densidad" class="result">
+                  0
+                </div>
+            </div>
+        </div>
+
+
+        <!--
+          Calculadora Peso
+        -->
+        <div id="calculadora-consumo-balanceado" class="ContentView">
+          <div class="TitleView">
+            CONSUMO DE ALIMENTO
+          </div>
+            <div class="card card-3">
+                <br/>
+                <fieldset>
+                  <!-- Text input-->
+                  <div class="form-group row">
+                    <label class="col-xs-5 control-label padding-for-label" for="textinput">Peso Cosecha:</label>
+                      <div class="col-xs-1"></div>
+                    <div class="col-xs-5">
+                    <input id="consumo_balanceado_peso" name="textinput" placeholder="ej: 18"  type="number" class="form-control input-md">
+                    <span class="help-block">(gr.)</span>
+                    </div>
+                  </div>
+                  <!-- Text input-->
+                  <div class="form-group row">
+                    <label class="col-xs-5 control-label padding-for-label" for="textinput">Densidad:</label>
+                      <div class="col-xs-1"></div>
+                    <div class="col-xs-5">
+                    <input id="consumo_balanceado_densidad" name="textinput" placeholder="ej: 300000" type="number" class="form-control input-md" type="text">
+                    <span class="help-block">Animales por hectárea</span>
+                    </div>
+                  </div>
+                  <!-- Text input-->
+                  <div class="form-group row">
+                    <label class="col-xs-5 control-label padding-for-label" for="textinput">Sobrevivencia:</label>
+                      <div class="col-xs-1"></div>
+                    <div class="col-xs-5">
+                    <input id="consumo_balanceado_sobrevivencia" name="textinput" placeholder="ej: 65" type="number" class="form-control input-md" type="text">
+                    <span class="help-block">porcentaje (%)</span>
+                    </div>
+                  </div>
+                  <!-- Text input-->
+                  <div class="form-group row">
+                    <label class="col-xs-5 control-label padding-for-label" for="textinput">Hectáreas:</label>
+                      <div class="col-xs-1"></div>
+                    <div class="col-xs-5">
+                    <input id="consumo_balanceado_hectareas" name="textinput" placeholder="ej: 154" type="number" class="form-control input-md" type="text">
+                    <span class="help-block">(ha)</span>
+                    </div>
+                  </div>
+                  <!-- Text input-->
+                  <div class="form-group row">
+                    <label class="col-xs-5 control-label padding-for-label" for="textinput">F.C.A.:</label>
+                      <div class="col-xs-1"></div>
+                    <div class="col-xs-5">
+                    <input id="consumo_balanceado_fca" name="textinput" placeholder="ej: 1.6" type="number" class="form-control input-md" type="text">
+                    <span class="help-block">(factor)</span>
+                    </div>
+                  </div>
+                </fieldset>
+            </div>
+            <div class="row">
+              <div class="col-xs-12 text-center">
+                <button id="button-calculadora-consumo-balanceado" type="button" class="btn btn-primary main-button-margins">Calcular</button>
+              </div>
+            </div>
+        </div>
+        <!--
+          Resultados Sobrevivencia
+        -->
+        <div id="respuesta-calculadora-consumo-balanceado" class="ContentView">
+          <div class="TitleView">
+            CONSUMO DE ALIMENTO
+          </div>
+            <div class="card card-3 no-padding">
+                <div class="title-card">
+                  Kilos totales
+                </div>
+                <div id="result_calculadora_consumo_balanceado" class="result">
+                  0
+                </div>
+            </div>
+        </div>
+
+
+        <!--
+          Calculadora ExtraPrime
+        -->
+        <div id="calculadora-extraprime" class="ContentView">
+          <div class="TitleView">
+            CALCULADORA EXTRAPRIME
+          </div>
+            <div class="card card-3">
+                <div style="width:100%;text-align:center;">
+                  <img src="images/logo-extraprime.png" style="width:220px;height:auto;margin:0 auto" />
+                </div>
+                <fieldset>
+                  <!-- Text input-->
+                  <div class="form-group row">
+                    <label class="col-xs-5 control-label padding-for-label" for="textinput">Alimento por Kg aplicado:</label>
+                      <div class="col-xs-1"></div>
+                    <div class="col-xs-5">
+                    <input id="extraprime_alimento_kg_aplicado" name="textinput"  placeholder="ej: 18"  type="number" class="form-control input-md" type="text">
+                    <span class="help-block">kilo/hectárea/día</span>
+                    </div>
+                  </div>
+                  <!-- Text input-->
+                  <div class="form-group row">
+                    <label class="col-xs-5 control-label padding-for-label" for="textinput">Cuánto sembró:</label>
+                      <div class="col-xs-1"></div>
+                    <div class="col-xs-5">
+                    <input id="extraprime_cuanto_sembro" name="textinput" placeholder="ej: 100000" type="number" class="form-control input-md" type="text">
+                    <span class="help-block"></span>
+                    </div>
+                  </div>
+                </fieldset>
+                <!-- Text input-->
+                <div class="form-group row">
+                  <label class="col-xs-5 control-label padding-for-label" for="textinput">Gramos:</label>
+                    <div class="col-xs-1"></div>
+                  <div class="col-xs-5">
+                    <select id="cmbExtraprimeGramos">
+                    </select>
+                  <span class="help-block"></span>
+                  </div>
+                </div>
+                <!-- Text input-->
+
+                <div class="form-group row" style="display:none">
+                  <label class="col-xs-5 control-label padding-for-label" for="textinput">Factor:</label>
+                    <div class="col-xs-1"></div>
+                  <div class="col-xs-5">
+                    <select id="cmbExtraprimeFactor">
+                    </select>
+                  <span class="help-block"></span>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+            <div class="row">
+              <div class="col-xs-12 text-center">
+                <button id="button-calculadora-extraprime" type="button" class="btn btn-primary main-button-margins">Calcular</button>
+              </div>
+            </div>
+        </div>
+        <!--
+          Resultados Extraprime
+        -->
+        <div id="respuesta-calculadora-extraprime" class="ContentView">
+          <div class="TitleView">
+            CALCULADORA EXTRAPRIME
+          </div>
+            <div class="card card-3 no-padding">
+                <div class="title-card">
+                  Animales totales
+                </div>
+                <div id="result_calculadora_extraprime_animales_totales" class="result">
+                  0
+                </div>
+            </div>
+            <div class="card card-3 no-padding">
+                <div class="title-card">
+                  Libras totales
+                </div>
+                <div id="result_calculadora_extraprime_libras_totales" class="result">
+                  0
+                </div>
+            </div>
+            <div class="card card-3 no-padding">
+                <div class="title-card">
+                  Porcentaje de sobrevivencia
+                </div>
+                <div id="result_calculadora_extraprime_sobrevivencia" class="result">
+                  0
+                </div>
+            </div>
+        </div>
+
+        <!--
+          Calculadora ExtraPrime
+        -->
+        <div id="calculadora-elmolino" class="ContentView">
+          <div class="TitleView">
+            CALCULADORA EL MOLINO
+          </div>
+            <div class="card card-3">
+                <br/>
+                <div style="width:100%;text-align:center;">
+                  <img src="images/logo-elmolino.png" style="width:140px;height:auto;margin:0 auto" />
+                </div>
+                <br/>
+                <fieldset>
+                  <!-- Text input-->
+                  <div class="form-group row">
+                    <label class="col-xs-5 control-label padding-for-label" for="textinput">Alimento por Kg aplicado:</label>
+                      <div class="col-xs-1"></div>
+                    <div class="col-xs-5">
+                    <input id="elmolino_alimento_kg_aplicado" name="textinput"  placeholder="ej: 18"  type="number" class="form-control input-md" type="text">
+                    <span class="help-block">kilo/hectárea/día</span>
+                    </div>
+                  </div>
+                  <!-- Text input-->
+                  <div class="form-group row">
+                    <label class="col-xs-5 control-label padding-for-label" for="textinput">Cuánto sembró:</label>
+                      <div class="col-xs-1"></div>
+                    <div class="col-xs-5">
+                    <input id="elmolino_cuanto_sembro" name="textinput" placeholder="ej: 100000" type="number" class="form-control input-md" type="text">
+                    <span class="help-block"></span>
+                    </div>
+                  </div>
+                </fieldset>
+                <!-- Text input-->
+                <div class="form-group row">
+                  <label class="col-xs-5 control-label padding-for-label" for="textinput">Gramos:</label>
+                    <div class="col-xs-1"></div>
+                  <div class="col-xs-5">
+                    <select id="cmbElMolinoGramos">
+                    </select>
+                  <span class="help-block"></span>
+                  </div>
+                </div>
+                <!-- Text input-->
+                <div class="form-group row" style="display:none;">
+                  <label class="col-xs-5 control-label padding-for-label" for="textinput">Factor:</label>
+                    <div class="col-xs-1"></div>
+                  <div class="col-xs-5">
+                    <select id="cmbElMolinoFactor">
+                    </select>
+                  <span class="help-block"></span>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+            <div class="row">
+              <div class="col-xs-12 text-center">
+                <button id="button-calculadora-elmolino" type="button" class="btn btn-primary main-button-margins">Calcular</button>
+              </div>
+            </div>
+        </div>
+        <!--
+          Resultados Extraprime
+        -->
+        <div id="respuesta-calculadora-elmolino" class="ContentView">
+          <div class="TitleView">
+            CALCULADORA EL MOLINO
+          </div>
+            <div class="card card-3 no-padding">
+                <div class="title-card">
+                  Animales totales
+                </div>
+                <div id="result_calculadora_elmolino_animales_totales" class="result">
+                  0
+                </div>
+            </div>
+            <div class="card card-3 no-padding">
+                <div class="title-card">
+                  Libras totales
+                </div>
+                <div id="result_calculadora_elmolino_libras_totales" class="result">
+                  0
+                </div>
+            </div>
+            <div class="card card-3 no-padding">
+                <div class="title-card">
+                  Porcentaje de sobrevivencia
+                </div>
+                <div id="result_calculadora_elmolino_sobrevivencia" class="result">
+                  0
+                </div>
+            </div>
+        </div>
+
+        <!--
+          Parámetros de Agua
+        -->
+        <div id="parametros-agua" class="ContentView">
+          <div class="TitleView">
+            PARAMETROS DE AGUA
+          </div>
+            <div class="card card-3">
+                <br/>
+                <fieldset>
+                  <!-- Text input-->
+                  <div class="form-group row">
+                    <label class="col-xs-5 control-label padding-for-label" for="textinput">ALCALINIDAD</label>
+                      <div class="col-xs-1"></div>
+                    <div class="col-xs-5">
+                      <p class="parametro">
+                      Min. 100 mg/l CO<span class="parametro-small">3</span>Ca<br/>
+                      (Agua dulce)      <br/>
+                      <br/>
+                      120-300 mg/l CO<span class="parametro-small">3</span>Ca<br/>
+                      (Agua salada)
+                    </p>
+                    </div>
+                  </div>
+                  <!-- Text input-->
+                  <div class="form-group row">
+                    <label class="col-xs-5 control-label padding-for-label" for="textinput">AMONIO</label>
+                      <div class="col-xs-1"></div>
+                    <div class="col-xs-5">
+                      <p class="parametro">
+                      0.2mg/I NH<span class="parametro-small">4</span> Máx.
+                    </p>
+                    </div>
+                  </div>
+                  <!-- Text input-->
+                  <div class="form-group row">
+                    <label class="col-xs-5 control-label padding-for-label" for="textinput">AMONIACO</label>
+                      <div class="col-xs-1"></div>
+                    <div class="col-xs-5">
+                      <p class="parametro">
+                      0.01mg/I NH<span class="parametro-small">3</span> Máx.
+                    </p>
+                    </div>
+                  </div>
+                  <!-- Text input-->
+                  <div class="form-group row">
+                    <label class="col-xs-5 control-label padding-for-label" for="textinput">DUREZA</label>
+                      <div class="col-xs-1"></div>
+                    <div class="col-xs-5">
+                      <p class="parametro">
+                      5000 - 8000 mgCO<span class="parametro-small">3</span>Ca/l
+                    </p>
+                    </div>
+                  </div>
+                  <!-- Text input-->
+                  <div class="form-group row">
+                    <label class="col-xs-5 control-label padding-for-label" for="textinput">FOSFORO</label>
+                      <div class="col-xs-1"></div>
+                    <div class="col-xs-5">
+                      <p class="parametro">
+                      0.3 - 0.5 mg/l P Mín.
+                    </p>
+                    </div>
+                  </div>
+                  <!-- Text input-->
+                  <div class="form-group row">
+                    <label class="col-xs-5 control-label padding-for-label" for="textinput">HIERRO</label>
+                      <div class="col-xs-1"></div>
+                    <div class="col-xs-5">
+                      <p class="parametro">
+                      2 - 4 mg/l Fe
+                    </p>
+                    </div>
+                  </div>
+                  <!-- Text input-->
+                  <div class="form-group row">
+                    <label class="col-xs-5 control-label padding-for-label" for="textinput">NITRATO</label>
+                      <div class="col-xs-1"></div>
+                    <div class="col-xs-5">
+                      <p class="parametro">
+                      1.0 mg/l NO<span class="parametro-small">3</span> Mín.
+                    </p>
+                    </div>
+                  </div>
+                  <!-- Text input-->
+                  <div class="form-group row">
+                    <label class="col-xs-5 control-label padding-for-label" for="textinput">NITRITO</label>
+                      <div class="col-xs-1"></div>
+                    <div class="col-xs-5">
+                      <p class="parametro">
+                      0.1 mg/l NO<span class="parametro-small">2</span> Max.
+                    </p>
+                    </div>
+                  </div>
+                  <!-- Text input-->
+                  <div class="form-group row">
+                    <label class="col-xs-5 control-label padding-for-label" for="textinput">PH</label>
+                      <div class="col-xs-1"></div>
+                    <div class="col-xs-5">
+                      <p class="parametro">
+                      7.5 - 8.5
+                    </p>
+                    </div>
+                  </div>
+                  <!-- Text input-->
+                  <div class="form-group row">
+                    <label class="col-xs-5 control-label padding-for-label" for="textinput">SILICATO</label>
+                      <div class="col-xs-1"></div>
+                    <div class="col-xs-5">
+                      <p class="parametro">
+                      10 mg/l SiO<span class="parametro-small">3</span>
+                    </p>
+                    </div>
+                  </div>
+                  <!-- Text input-->
+                  <div class="form-group row">
+                    <label class="col-xs-5 control-label padding-for-label" for="textinput">SULFURO DE HIDROGENO</label>
+                      <div class="col-xs-1"></div>
+                    <div class="col-xs-5">
+                      <p class="parametro">
+                      0.01 mg/l SH<span class="parametro-small">2</span>
+                    </p>
+                    </div>
+                  </div>
+                  <!-- Text input-->
+                  <div class="form-group row">
+                    <label class="col-xs-5 control-label padding-for-label" for="textinput">NITRITO (LAB. LARVAS)</label>
+                      <div class="col-xs-1"></div>
+                    <div class="col-xs-5">
+                      <p class="parametro">
+                      4.5 mg/l Máx.
+                    </p>
+                    </div>
+                  </div>
+                  <!-- Text input-->
+                  <div class="form-group row">
+                    <label class="col-xs-5 control-label padding-for-label" for="textinput">AMONIACO (LAB. LARVAS)</label>
+                      <div class="col-xs-1"></div>
+                    <div class="col-xs-5">
+                      <p class="parametro">
+                      0.11 mg/l Máx.
+                    </p>
+                    </div>
+                  </div>
+                  <!-- Text input-->
+                  <div class="form-group row">
+                    <label class="col-xs-5 control-label padding-for-label" for="textinput">RELACION Mg:Ca:K</label>
+                      <div class="col-xs-1"></div>
+                    <div class="col-xs-5">
+                      <p class="parametro">
+                      3:1:1
+                    </p>
+                    </div>
+                  </div>
+
+                </fieldset>
+
+            </div>
+        </div>
+
+        <!--
+          Parámetros de Suelo
+        -->
+        <div id="parametros-suelo" class="ContentView">
+          <div class="TitleView">
+            PARAMETROS DE SUELO
+          </div>
+            <div class="card card-3">
+                <br/>
+                <fieldset>
+                  <!-- Text input-->
+                  <div class="form-group row">
+                    <label class="col-xs-5 control-label padding-for-label" for="textinput">MATERIA ORGANICA</label>
+                      <div class="col-xs-1"></div>
+                    <div class="col-xs-5">
+                      <p class="parametro">
+                      4% Máx.
+                      </p>
+                    </div>
+                  </div>
+                  <!-- Text input-->
+                  <div class="form-group row">
+                    <label class="col-xs-5 control-label padding-for-label" for="textinput">FOSFORO</label>
+                      <div class="col-xs-1"></div>
+                    <div class="col-xs-5">
+                      <p class="parametro">
+                        50 mg/l P Mín.
+                    </p>
+                    </div>
+                  </div>
+                  <!-- Text input-->
+                  <div class="form-group row">
+                    <label class="col-xs-5 control-label padding-for-label" for="textinput">HIERRO</label>
+                      <div class="col-xs-1"></div>
+                    <div class="col-xs-5">
+                      <p class="parametro">
+                      200 - 400 mg/l Fe
+                    </p>
+                    </div>
+                  </div>
+                  <!-- Text input-->
+                  <div class="form-group row">
+                    <label class="col-xs-5 control-label padding-for-label" for="textinput">SULFURO DE HIDROGENO</label>
+                      <div class="col-xs-1"></div>
+                    <div class="col-xs-5">
+                      <p class="parametro">
+                      0.01 mg/l SH<span class="parametro-small">2</span>
+                    </p>
+                    </div>
+                  </div>
+                  <!-- Text input-->
+                  <div class="form-group row">
+                    <label class="col-xs-5 control-label padding-for-label" for="textinput">CARBONO : NITROGENO</label>
+                      <div class="col-xs-1"></div>
+                    <div class="col-xs-5">
+                      <p class="parametro">
+                      10:1
+                    </p>
+                    </div>
+                  </div>
+
+                </fieldset>
+
+            </div>
+        </div>
+
+
+
+        <!--
+          Calculadora raceways
+        -->
+
+        <div id="calculadora-raceways" class="ContentView">
+          <div class="TitleView">
+            CALCULADORA RACEWAYS
+          </div>
+            <div class="card card-3">
+                <br/>
+                <fieldset>
+
+
+                  <p class="descriptino-simple">
+                    De 28ºC a 32ºC.
+                  </p>
+                  <p class="descriptino-simple">
+                    Suministrar 8 dietas al día mínimo.
+                </p>
+                <p class="descriptino-simple">
+                    Cuando siembre larva de menor tamaño (&lt; 280 lv/Gr) aplicar Molino 0 al 20% de Biomasa.
+                  </p>
+
+                  <br/>
+
+
+                </fieldset>
+            </div>
+            <div class="row">
+              <div class="col-xs-12 text-center">
+                <br/>
+                <button id="button-calculadora-raceways" type="button" class="btn btn-primary main-button-margins">Ver tabla</button>
+              </div>
+            </div>
+        </div>
+        <!--
+          Resultados Sobrevivencia
+        -->
+        <div id="respuesta-calculadora-raceways" class="ContentView">
+          <div class="TitleView">
+            CALCULADORA RACEWAYS
+          </div>
+          <div class="tabla-raceways">
+            <!--
+            <img src="images/raceways.png" />
+          -->
+
+          <div class="part-left">
+            <img src="images/raceways_left.png" />
+          </div>
+          <div class="part-right">
+            <img src="images/raceways_right.png" />
+          </div>
+
+
+          </div>
+        </div>
+
+
+
+
+        <!--
+          Calculadora UTILIDAD HECTAREA DIA
+        -->
+        <div id="calculadora-hectarea-dia" class="ContentView">
+          <div class="TitleView">
+            CALCULADORA UTILIDAD HECTAREA DIA
+          </div>
+            <div class="card card-3">
+                <br/>
+                <fieldset>
+                  <!-- Text input-->
+                  <div class="form-group row">
+                    <label class="col-xs-5 control-label padding-for-label" for="textinput">Costos Indirectos Ha/día:</label>
+                      <div class="col-xs-1"></div>
+                    <div class="col-xs-5">
+                    <input id="utilidad_costos_fijos_hectarea_dia" name="textinput" placeholder="ej: 18" type="number" class="form-control input-md" type="text">
+                    <span class="help-block">($)</span>
+                    </div>
+                  </div>
+                  <!-- Text input-->
+                  <div class="form-group row">
+                    <label class="col-xs-5 control-label padding-for-label" for="textinput">Resultado Real o estimado de producción:</label>
+                      <div class="col-xs-1"></div>
+                    <div class="col-xs-5">
+                    <input id="utilidad_libras_ha_cosecha" name="textinput" placeholder="ej: 3780" type="number" class="form-control input-md" type="text">
+                    <span class="help-block">(lb/ha) cosecha</span>
+                    </div>
+                  </div>
+                  <!-- Text input-->
+                  <div class="form-group row">
+                    <label class="col-xs-5 control-label padding-for-label" for="textinput">Precio de lista de empacadora:</label>
+                      <div class="col-xs-1"></div>
+                    <div class="col-xs-5">
+                    <input id="utilidad_us_lb" name="textinput" placeholder="ej: 2.50" type="number" class="form-control input-md" type="text">
+                    <span class="help-block">us/lb ($)</span>
+                    </div>
+                  </div>
+                  <!-- Text input-->
+                  <div class="form-group row">
+                    <label class="col-xs-5 control-label padding-for-label" for="textinput">Días de ciclo:</label>
+                      <div class="col-xs-1"></div>
+                    <div class="col-xs-5">
+                    <input id="utilidad_dias_ciclo" name="textinput" placeholder="ej: 100" type="number" class="form-control input-md" type="text">
+                    <span class="help-block"></span>
+                    </div>
+                  </div>
+                <!-- Text input-->
+                <div class="form-group row">
+                  <label class="col-xs-5 control-label padding-for-label" for="textinput">Costo Kg Alimento:</label>
+                    <div class="col-xs-1"></div>
+                  <div class="col-xs-5">
+                  <input id="utilidad_costo_kg_alimento" name="textinput" placeholder="ej: 1.08" type="number" class="form-control input-md" type="text">
+                  <span class="help-block">($)</span>
+                  </div>
+                </div>
+              <!-- Text input-->
+              <div class="form-group row">
+                <label class="col-xs-5 control-label padding-for-label" for="textinput">FC:</label>
+                <div class="col-xs-1"></div>
+                <div class="col-xs-5">
+                <input id="utilidad_fc" name="textinput" placeholder="ej: 1.6" type="number" class="form-control input-md" type="text">
+                <span class="help-block">Factor</span>
+                </div>
+              </div>
+              <!-- Text input-->
+              <div class="form-group row">
+                <label class="col-xs-5 control-label padding-for-label" for="textinput">Densidad siembra:</label>
+                <div class="col-xs-1"></div>
+                <div class="col-xs-5">
+                <input id="utilidad_densidad_siembra" name="textinput" placeholder="ej: 120000" type="number" class="form-control input-md" type="text">
+                <span class="help-block"></span>
+                </div>
+              </div>
+              <!-- Text input-->
+              <div class="form-group row">
+                <label class="col-xs-5 control-label padding-for-label" for="textinput">Costo insumos por Ha por Ciclo:</label>
+                <div class="col-xs-1"></div>
+                <div class="col-xs-5">
+                <input id="utilidad_costo_insumos_ha_ciclo" name="textinput" placeholder="ej: 200" type="number" class="form-control input-md" type="text">
+                <span class="help-block">($)</span>
+                </div>
+              </div>
+              <!-- Text input-->
+              <div class="form-group row">
+                <label class="col-xs-5 control-label padding-for-label" for="textinput">Costo por millar de larva:</label>
+                <div class="col-xs-1"></div>
+                <div class="col-xs-5">
+                <input id="utilidad_costo_millar_larva" name="textinput" placeholder="ej: 2.3" type="number" class="form-control input-md" type="text">
+                <span class="help-block">($)</span>
+                </div>
+              </div>
+            </fieldset>
+            </div>
+            <div class="row">
+              <div class="col-xs-12 text-center">
+                <button id="button-calculadora-hectarea-dia" type="button" class="btn btn-primary main-button-margins">Calcular</button>
+              </div>
+            </div>
+        </div>
+
+        <!--
+          Resultados UTILIDAD HECTAREA DIA
+        -->
+        <div id="respuesta-calculadora-hectarea-dia" class="ContentView">
+          <div class="TitleView">
+            CALCULADORA UTILIDAD HECTARA DIA
+          </div>
+            <div class="card card-3 no-padding">
+                <div class="title-card">
+                  suma costos Ha/dia ($)
+                </div>
+                <div id="result_calculadora_hectarea_dia_1" class="result">
+                  0
+                </div>
+            </div>
+            <div class="card card-3 no-padding">
+                <div class="title-card">
+                  Utilidad Ha/dia ($)
+                </div>
+                <div id="result_calculadora_hectarea_dia_2" class="result">
+                  0
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+        <!--
+          ====================== PRODUCTOS =============================
+        -->
+
+        <!--
+          Products Category
+        -->
+        <div id="list-products-categories" class="ContentView">
+          <div class="card card-2" onclick="hideAllAndShow('product-mysis')">
+            <div class="row">
+              <div class="col-xs-4">
+                <img class="ImageView" src="images/logo-elmolinomysis.png" />
+              </div>
+              <div class="col-xs-8">
+                <div class="row">
+                  <div class="col-xs-8 padding1">
+                    <span class="title color-primary">El Molino MYSIS</span>
+                  </div>
+                  <div class="col-xs-4 padding1 text-right">
+                    <span class="glyphicon glyphicon-menu-right color-primary" aria-hidden="true"></span>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-11">
+                    <div class="horizontal-separator-skyblue"></div>
+                    <div>
+                      <p class="ParagraphView padding1">
+                        Esta dieta para Mysis es fruto de nuestra investigación, cumpliendo con los parámetros y exigencias nacionales e internacionales.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <div class="card card-2" onclick="hideAllAndShow('product-molino-plus')">
+            <div class="row">
+              <div class="col-xs-4">
+                <img class="ImageView" src="images/logo-elmolinoplus.png" />
+              </div>
+              <div class="col-xs-8">
+                <div class="row">
+                  <div class="col-xs-8 padding1">
+                    <span class="title color-primary">El Molino Plus</span>
+                  </div>
+                  <div class="col-xs-4 padding1 text-right">
+                    <span class="glyphicon glyphicon-menu-right color-primary" aria-hidden="true"></span>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-11">
+                    <div class="horizontal-separator-skyblue"></div>
+                    <div>
+                      <p class="ParagraphView padding1">
+                        Es un alimento extrusado con aditivos nutracéuticos como probióticos, nucleótidos, completo de vitaminas y minerales y oligosacáridos que mejoran su sistema inmune.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <!--
+          <div class="card card-2" onclick="hideAllAndShow('product-frutomar')">
+            <div class="row">
+              <div class="col-xs-4">
+                <img class="ImageView" src="images/logo-frutomar.png" />
+              </div>
+              <div class="col-xs-8">
+                <div class="row">
+                  <div class="col-xs-8 padding1">
+                    <span class="title color-primary">Frutomar</span>
+                  </div>
+                  <div class="col-xs-4 padding1 text-right">
+                    <span class="glyphicon glyphicon-menu-right color-primary" aria-hidden="true"></span>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-11">
+                    <div class="horizontal-separator-skyblue"></div>
+                    <div>
+                      <p class="ParagraphView padding1">
+                        Es una dieta formulada con una estricta selección de ingredientes nacionales e importados para suplir de manera efectiva losrequerimientos nutricionales en los sistemas de cultivos extensivos.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          -->
+
+          <div class="card card-2" onclick="hideAllAndShow('product-rwo')">
+            <div class="row">
+              <div class="col-xs-4">
+                <img class="ImageView" src="images/logo-rwo.png" />
+              </div>
+              <div class="col-xs-8">
+                <div class="row">
+                  <div class="col-xs-8 padding1">
+                    <span class="title color-primary">RWO</span>
+                  </div>
+                  <div class="col-xs-4 padding1 text-right">
+                    <span class="glyphicon glyphicon-menu-right color-primary" aria-hidden="true"></span>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-11">
+                    <div class="horizontal-separator-skyblue"></div>
+                    <div>
+                      <p class="ParagraphView padding1">
+                        El alimento RWO es un iniciador importante para la adaptación nutricional de la postlarva en el paso de laboratorio a piscinas, raceways o precrías.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card card-2" onclick="hideAllAndShow('product-xp-pro')">
+            <div class="row">
+              <div class="col-xs-4">
+                <img class="ImageView" src="images/logo-xpro.png" />
+              </div>
+              <div class="col-xs-8">
+                <div class="row">
+                  <div class="col-xs-8 padding1">
+                    <span class="title color-primary">XPRO</span>
+                  </div>
+                  <div class="col-xs-4 padding1 text-right">
+                    <span class="glyphicon glyphicon-menu-right color-primary" aria-hidden="true"></span>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-11">
+                    <div class="horizontal-separator-skyblue"></div>
+                    <div>
+                      <p class="ParagraphView padding1">
+                        es un iniciador especializado 2 en 1 que contiene probiótico en su fórmula, no como cobertura sino en su mezcla.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card card-2" onclick="hideAllAndShow('product-xp')">
+            <div class="row">
+              <div class="col-xs-4">
+                <img class="ImageView" src="images/logo-xp1.png" />
+              </div>
+              <div class="col-xs-8">
+                <div class="row">
+                  <div class="col-xs-8 padding1">
+                    <span class="title color-primary">XP1</span>
+                  </div>
+                  <div class="col-xs-4 padding1 text-right">
+                    <span class="glyphicon glyphicon-menu-right color-primary" aria-hidden="true"></span>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-11">
+                    <div class="horizontal-separator-skyblue"></div>
+                    <div>
+                      <p class="ParagraphView padding1">
+                        El   iniciador XP1 contiene  las características granulométricas , nutricionales y  promotoras  de crecimiento que el camarón  necesita para continuar la cadena nutricional
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card card-2" onclick="hideAllAndShow('product-xp2')">
+            <div class="row">
+              <div class="col-xs-4">
+                <img class="ImageView" src="images/logo-xp2.png" />
+              </div>
+              <div class="col-xs-8">
+                <div class="row">
+                  <div class="col-xs-8 padding1">
+                    <span class="title color-primary">XP2</span>
+                  </div>
+                  <div class="col-xs-4 padding1 text-right">
+                    <span class="glyphicon glyphicon-menu-right color-primary" aria-hidden="true"></span>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-11">
+                    <div class="horizontal-separator-skyblue"></div>
+                    <div>
+                      <p class="ParagraphView padding1">
+                        El alimento iniciador  XP2 fue desarrollado para suplir las necesidades del camarón en ese estadío, con fuertes promotores de crecimiento y protección para que se desarrolle sin novedades.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card card-2" onclick="hideAllAndShow('product-elmolino')">
+            <div class="row">
+              <div class="col-xs-4">
+                <img class="ImageView" src="images/logo-elmolino.png" />
+              </div>
+              <div class="col-xs-8">
+                <div class="row">
+                  <div class="col-xs-8 padding1">
+                    <span class="title color-primary">El Molino</span>
+                  </div>
+                  <div class="col-xs-4 padding1 text-right">
+                    <span class="glyphicon glyphicon-menu-right color-primary" aria-hidden="true"></span>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-11">
+                    <div class="horizontal-separator-skyblue"></div>
+                    <div>
+                      <p class="ParagraphView padding1">
+                        Nuestro alimento EL MOLINO está formulado con todos los nutrientes necesarios para el mantenimiento y buen crecimiento del camarón en las diferentes etapas.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card card-2" onclick="hideAllAndShow('product-extraprime')">
+            <div class="row">
+              <div class="col-xs-4">
+                <img class="ImageView" src="images/logo-extraprime.png" />
+              </div>
+              <div class="col-xs-8">
+                <div class="row">
+                  <div class="col-xs-8 padding1">
+                    <span class="title color-primary">EXTRA PRIME</span>
+                  </div>
+                  <div class="col-xs-4 padding1 text-right">
+                    <span class="glyphicon glyphicon-menu-right color-primary" aria-hidden="true"></span>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-11">
+                    <div class="horizontal-separator-skyblue"></div>
+                    <div>
+                      <p class="ParagraphView padding1">
+                        Nuestra responsabilidad como Especialistas en Diseño de Dietas para camarones se fundamenta en hacer de esta una actividad sustentable y sostenible.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <br/>
+          <br/>
+        </div>
+
+
+        <!--
+          product MYSIS
+        -->
+        <div id="product-mysis" class="ContentView ProductView">
+            <div class="card card-3">
+              <div class="row">
+                <div class="col-xs-7 product-text-block">
+                  <div class="invisible-separator-block-text"></div>
+                  <span class="color-primary texto">Tamaño de partícula:</span><br/>
+                  <span class="color-secondary texto">&lt;100</span>
+                  <div class="invisible-separator-block-text"></div>
+                  <span class="color-primary texto">Composición: </span><br/>
+                  <span class="color-secondary texto">50% de proteína, nucleótidos, hidrolizados, ácidos orgánicos, Premezcla Prime</span>
+                  <div class="invisible-separator-block-text"></div>
+                  <span class="color-primary texto">Características: </span><br/>
+                  <span class="color-secondary texto">Extrusado / Probiótico</span><br/>
+                </div>
+                <div class="col-xs-5 text-center">
+                  <img class="product-img" src="images/logo-elmolinomysis.png" />
+                </div>
+              </div>
+            </div>
+            <div class="card card-3">
+              <div class="row">
+                <div class="col-xs-12 product-description-block">
+                  <div class="row">
+                    <div class="col-xs-12 text-center">
+                      <br/>
+                      <span class="title color-primary">El Molino MYSIS</span>
+                    </div>
+                  </div>
+                  <div class="invisible-separator-block-text"></div>
+                  <div class="invisible-separator-block-text"></div>
+                  <p>
+                    Esta dieta para Mysis es fruto de nuestra investigación, cumpliendo con los parámetros y exigencias nacionales e internacionales.
+                    <br/>
+                    Este es un producto que ha resultado ser altamente eficiente y con el estándar de calidad de ALIMENTSA. Su fórmula, elaborada con materia prima seleccionada, permite una mejor asimilación de nutrientes, fortalece efectivamente sus larvas, optimiza el paso de Mysis a larva. Gracias a la tecnología de punta utilizada, obtenemos un producto con 100 micras de granulometría que mejora la asimilación de sus nutrientes y con una adición de probiótico.
+                  </p>
+                  <br/>
+                  <br/>
+                </div>
+              </div>
+            </div>
+            <div class="card card-3">
+              <div class="row">
+                <div class="col-xs-12 product-description-block">
+                  <div class="row">
+                    <div class="col-xs-12 text-center">
+                      <br/>
+                      <span class="title color-primary">Beneficios</span>
+                    </div>
+                  </div>
+                  <div class="invisible-separator-block-text"></div>
+                  <div class="invisible-separator-block-text"></div>
+                    <div class="row">
+                      <div class="col-xs-1 text-center product-bullet">
+                        <span class="dot color-primary">&middot;</span>
+                      </div>
+                      <div class="col-xs-11 product-item">
+                        Un producto único que reduce el impacto en la calidad del agua.
+                      </div>
+                      <div class="col-xs-1 text-center product-bullet">
+                        <span class="dot color-primary">&middot;</span>
+                      </div>
+                      <div class="col-xs-11 product-item">
+                        Mejora la asimilación de nutrientes y su pigmentación.
+                      </div>
+                      <div class="col-xs-1 text-center product-bullet">
+                        <span class="dot color-primary">&middot;</span>
+                      </div>
+                      <div class="col-xs-11 product-item">
+                        Contiene proteína de origen marino, lo cual lo hace mucho más nutritivo y atractante.
+                      </div>
+                      <div class="col-xs-1 text-center product-bullet">
+                        <span class="dot color-primary">&middot;</span>
+                      </div>
+                      <div class="col-xs-11 product-item">
+                        Una dieta única con 100 micras de granulometría, gracias a la tecnología de punta utilizada, que le permitirá al Mysis asimilar la totalidad del producto.
+                      </div>
+                      <div class="col-xs-1 text-center product-bullet">
+                        <span class="dot color-primary">&middot;</span>
+                      </div>
+                      <div class="col-xs-11 product-item">
+                        Creado para fortalecer sus parámetros de inmunidad.
+                      </div>
+                      <div class="col-xs-1 text-center product-bullet">
+                        <span class="dot color-primary">&middot;</span>
+                      </div>
+                      <div class="col-xs-11 product-item">
+                        Único producto especializado para el estadío Mysis con adición de probiótico.
+                      </div>
+                    </div>
+                  <br/>
+                </div>
+              </div>
+            </div>
+            <br/>
+            <br/>
+        </div>
+
+
+
+        <!--
+          product MOLINO PLUS
+        -->
+        <div id="product-molino-plus" class="ContentView ProductView">
+          <div class="card card-3">
+            <div class="row">
+              <div class="col-xs-7 product-text-block">
+                <div class="invisible-separator-block-text"></div>
+                <span class="color-primary texto">Tamaño de partícula:</span><br/>
+                <span class="color-secondary texto">&lt;250</span>
+                <div class="invisible-separator-block-text"></div>
+                <span class="color-primary texto">Composición: </span><br/>
+                <span class="color-secondary texto">Composición: 50% de proteína, nucleótidos, hidrolizados, ácidos orgánicos, Premezcla Prime</span>
+                <div class="invisible-separator-block-text"></div>
+                <span class="color-primary texto">Características: </span><br/>
+                <span class="color-secondary texto">Extrusado / Probiótico</span><br/>
+              </div>
+              <div class="col-xs-5 text-center">
+                <img class="product-img" src="images/logo-elmolinoplus0.png" />
+              </div>
+            </div>
+          </div>
+            <div class="card card-3">
+              <div class="row">
+                <div class="col-xs-12 product-description-block">
+                  <div class="row">
+                    <div class="col-xs-12 text-center">
+                      <br/>
+                      <span class="title color-primary">El Molino Plus Nº 0</span>
+                    </div>
+                  </div>
+                  <div class="invisible-separator-block-text"></div>
+                  <div class="invisible-separator-block-text"></div>
+                  <p>
+                    Es un alimento extrusado con aditivos nutracéuticos como probióticos, nucleótidos, completo de vitaminas y minerales y oligosacáridos que mejoran su sistema inmune.
+                    <br/>
+                  </p>
+                  <br/>
+                  <br/>
+                  <div class="row">
+                    <div class="col-xs-12 text-center">
+                      <span class="title color-primary">Características</span>
+                    </div>
+                  </div>
+                  <br/>
+                  <p>
+                    Tiene 50% de proteína con 250 micras de tamaño, extrusado y con probiótico diseñado especialmente para estadíos larvarios
+                  </p>
+                  <br/>
+                  <br/>
+                  <div class="row">
+                    <div class="col-xs-12 text-center">
+                      <span class="title color-primary">Suministro</span>
+                    </div>
+                  </div>
+                  <br/>
+                  <p>
+                    Alimentar desde PL1 hasta PL6 o 700 larvas por gramo
+                  </p>
+                  <br/>
+                  <br/>
+                </div>
+              </div>
+            </div>
+
+            <br/>
+
+
+            <div class="card card-3">
+              <div class="row">
+                <div class="col-xs-7 product-text-block">
+                  <div class="invisible-separator-block-text"></div>
+                  <span class="color-primary texto">Tamaño de partícula:</span><br/>
+                  <span class="color-secondary texto">&lt;500</span>
+                  <div class="invisible-separator-block-text"></div>
+                  <span class="color-primary texto">Composición: </span><br/>
+                  <span class="color-secondary texto">Composición: 50% de proteína, nucleótidos, hidrolizados, ácidos orgánicos, Premezcla Prime</span>
+                  <div class="invisible-separator-block-text"></div>
+                  <span class="color-primary texto">Características: </span><br/>
+                  <span class="color-secondary texto">Extrusado / Probiótico</span><br/>
+                </div>
+                <div class="col-xs-5 text-center">
+                  <img class="product-img" src="images/logo-elmolinoplus1.png" />
+                </div>
+              </div>
+            </div>
+            <div class="card card-3">
+              <div class="row">
+                <div class="col-xs-12 product-description-block">
+                  <div class="row">
+                    <div class="col-xs-12 text-center">
+                      <br/>
+                      <span class="title color-primary">El Molino Plus Nº 1</span>
+                    </div>
+                  </div>
+                  <div class="invisible-separator-block-text"></div>
+                  <div class="invisible-separator-block-text"></div>
+
+                  <div class="row">
+                    <div class="col-xs-12 text-center">
+                      <span class="title color-primary">Características</span>
+                    </div>
+                  </div>
+                  <br/>
+                  <p>
+                    Con 500 micras este alimento suple las necesidades de las larvas en raceways o laboratorio, tiene 50% de proteína, es extrusado y contiene probiótico en su fórmula
+                  </p>
+                  <br/>
+                  <br/>
+                  <div class="row">
+                    <div class="col-xs-12 text-center">
+                      <span class="title color-primary">Suministro</span>
+                    </div>
+                  </div>
+                  <br/>
+                  <p>
+                    Utilizar desde 700 larvas por gramo hasta 500-400 larvas por gramo
+                  </p>
+                  <br/>
+                  <br/>
+                </div>
+              </div>
+            </div>
+
+            <br/>
+
+            <div class="card card-3">
+              <div class="row">
+                <div class="col-xs-7 product-text-block">
+                  <div class="invisible-separator-block-text"></div>
+                  <span class="color-primary texto">Tamaño de partícula:</span><br/>
+                  <span class="color-secondary texto">&lt;700</span>
+                  <div class="invisible-separator-block-text"></div>
+                  <span class="color-primary texto">Composición: </span><br/>
+                  <span class="color-secondary texto">Composición: 50% de proteína, nucleótidos, hidrolizados, ácidos orgánicos, Premezcla Prime</span>
+                  <div class="invisible-separator-block-text"></div>
+                  <span class="color-primary texto">Características: </span><br/>
+                  <span class="color-secondary texto">Extrusado / Probiótico</span><br/>
+                </div>
+                <div class="col-xs-5 text-center">
+                  <img class="product-img" src="images/logo-elmolinoplus2.png" />
+                </div>
+              </div>
+            </div>
+            <div class="card card-3">
+              <div class="row">
+                <div class="col-xs-12 product-description-block">
+                  <div class="row">
+                    <div class="col-xs-12 text-center">
+                      <br/>
+                      <span class="title color-primary">El Molino Plus Nº 2</span>
+                    </div>
+                  </div>
+                  <div class="invisible-separator-block-text"></div>
+                  <div class="invisible-separator-block-text"></div>
+                  <p>
+                    Es un alimento extrusado con aditivos nutracéuticos como probióticos, nucleótidos, completo de vitaminas y minerales y oligosacáridos que mejoran su sistema inmune.
+                    <br/>
+                  </p>
+                  <br/>
+                  <br/>
+                  <div class="row">
+                    <div class="col-xs-12 text-center">
+                      <span class="title color-primary">Características</span>
+                    </div>
+                  </div>
+                  <br/>
+                  <p>
+                    Tiene 50% de proteína y se lo utiliza en raceways para la transición de la larva de laboratorio a los precriaderos o raceways. Su tamaño de partícula es menor a 700 micras.
+                  </p>
+                  <br/>
+                  <br/>
+                  <div class="row">
+                    <div class="col-xs-12 text-center">
+                      <span class="title color-primary">Suministro</span>
+                    </div>
+                  </div>
+                  <br/>
+                  <p>
+                    Se sugiere utilizar a partir de PL 10 hasta PL 12 , inclusive, es decir de 500 larvas por gramo hasta 200 larvas por gramo Dosis: durante esos 3 días de 5, 8 y 10 kg respectivamente por cada 1,000,000 de postlarvas sembradas, repartidas en una frecuencia no menor a 4 por día.
+                  </p>
+                  <br/>
+                  <br/>
+                </div>
+              </div>
+            </div>
+
+
+
+
+
+
+            <br/>
+            <br/>
+        </div>
+
+
+
+        <!--
+          product rwo
+        -->
+        <div id="product-rwo" class="ContentView ProductView">
+          <div class="card card-3">
+            <div class="row">
+              <div class="col-xs-7 product-text-block">
+                <div class="invisible-separator-block-text"></div>
+                <span class="color-primary texto">Tamaño de partícula:</span><br/>
+                <span class="color-secondary texto">0.7 – 1.2mm. de diámetro</span>
+                <div class="invisible-separator-block-text"></div>
+                <span class="color-primary texto">Composición: </span><br/>
+                <span class="color-secondary texto">40% de proteína, nucleótidos, hidrolizados, ácidos orgánicos, Premezcla Prime 0</span>
+                <div class="invisible-separator-block-text"></div>
+                <span class="color-primary texto">Características: </span><br/>
+                <span class="color-secondary texto">Extrusado / Probiótico</span><br/>
+              </div>
+              <div class="col-xs-5 text-center">
+                <img class="product-img" src="images/logo-rwo.png" />
+              </div>
+            </div>
+          </div>
+            <div class="card card-3">
+              <div class="row">
+                <div class="col-xs-12 product-description-block">
+                  <div class="row">
+                    <div class="col-xs-12 text-center">
+                      <br/>
+                      <span class="title color-primary">RWO</span>
+                    </div>
+                  </div>
+                  <div class="invisible-separator-block-text"></div>
+                  <div class="invisible-separator-block-text"></div>
+                  <p>
+                    El alimento RWO es un iniciador importante para la adaptación nutricional de la postlarva en el paso de laboratorio a piscinas, raceways o precrías, disminuyendo significativamente el estrés metabólico causado durante este período de transición.
+                  </p>
+                  <br/>
+                  <br/>
+                </div>
+              </div>
+            </div>
+            <div class="card card-3">
+              <div class="row">
+                <div class="col-xs-12 product-description-block">
+                  <div class="row">
+                    <div class="col-xs-12 text-center">
+                      <br/>
+                      <span class="title color-primary">Características:</span>
+                    </div>
+                  </div>
+                  <div class="invisible-separator-block-text"></div>
+                  <div class="invisible-separator-block-text"></div>
+<p>
+  Es un alimento extrusado con 40% de proteína, aditivos nutracéuticos, probióticos, nucleótidos, ácidos orgánicos, aceites escenciales y oligosacáridos que mejoran su sistema inmune.
+</p>  <br/>
+                </div>
+              </div>
+            </div>
+            <br/>
+            <div class="card card-3">
+              <div class="row">
+                <div class="col-xs-12 product-description-block">
+                  <div class="row">
+                    <div class="col-xs-12 text-center">
+                      <br/>
+                      <span class="title color-primary">Suministro:</span>
+                    </div>
+                  </div>
+                  <div class="invisible-separator-block-text"></div>
+                  <div class="invisible-separator-block-text"></div>
+<p>
+  Utilizar desde  PL12   o 200 - 300 larvas por gramo hasta las 10  postlarvas  por gramo. A una frecuencia de 6 veces al día suministrar  al voleo, procurando esparcir el alimento alrededor del perímetro del espejo de agua de la piscina,  evitando el desperdicio en las orillas.
+</p>  <br/>
+                </div>
+              </div>
+            </div>
+            <br/>
+            <div class="card card-3">
+              <div class="row">
+                <div class="col-xs-12 product-description-block">
+                  <div class="row">
+                    <div class="col-xs-12 text-center">
+                      <br/>
+                      <span class="title color-primary">Almacenamiento:</span>
+                    </div>
+                  </div>
+                  <div class="invisible-separator-block-text"></div>
+                  <div class="invisible-separator-block-text"></div>
+                    <div class="row">
+                      <div class="col-xs-1 text-center product-bullet">
+                        <span class="dot color-primary">&middot;</span>
+                      </div>
+                      <div class="col-xs-11 product-item">
+                        Por sus características especiales el  RWO debe ser almacenado en bodegas frescas y ventiladas evitando al máximo los efectos negativos de temperatura y humedad elevadas que dañen sus propiedades nutricionales.
+
+                      </div>
+                      <div class="col-xs-1 text-center product-bullet">
+                        <span class="dot color-primary">&middot;</span>
+                      </div>
+                      <div class="col-xs-11 product-item">
+                        Además debe almacenarse en forma separada evitando colocar sobre estos sacos de alimentos de mayor peso que destruyan la presentación del RW0.
+
+                      </div>
+                      <div class="col-xs-1 text-center product-bullet">
+                        <span class="dot color-primary">&middot;</span>
+                      </div>
+                      <div class="col-xs-11 product-item">
+                        Se debe colocar los sacos en pallets de madera para evitar el contacto directo con el piso y con las paredes.
+                      </div>
+                      <div class="col-xs-1 text-center product-bullet">
+                        <span class="dot color-primary">&middot;</span>
+                      </div>
+                      <div class="col-xs-11 product-item">
+                        No es recomendable almacenar el alimento en forma directa con la luz solar, ya que esto produce condensación y cambios de temperaturas en el alimento.
+
+                      </div>
+                      <div class="col-xs-1 text-center product-bullet">
+                        <span class="dot color-primary">&middot;</span>
+                      </div>
+                      <div class="col-xs-11 product-item">
+                        No almacene otros productos junto al alimento balanceado, estos deben estar separados y claramente identificados; para evitar la propagación de roedores o insectos.
+                      </div>
+                    </div>
+                  <br/>
+                </div>
+              </div>
+            </div>
+            <br/>
+
+            <br/>
+        </div>
+
+
+
+        <!--
+        PRODUCT XP
+        -->
+
+        <div id="product-xp" class="ContentView ProductView">
+          <div class="card card-3">
+            <div class="row">
+              <div class="col-xs-7 product-text-block">
+                <div class="invisible-separator-block-text"></div>
+                <span class="color-primary texto">Tamaño de partícula:</span><br/>
+                <span class="color-secondary texto">Pellet corto 1.2mm de diámetro</span>
+                <div class="invisible-separator-block-text"></div>
+                <span class="color-primary texto">Composición: </span><br/>
+                <span class="color-secondary texto">35% de proteína, nucleótidos, hidrolizados, ácidos orgánicos</span>
+                <div class="invisible-separator-block-text"></div>
+                <span class="color-primary texto">Características: </span><br/>
+                <span class="color-secondary texto">Premezcla Prime 1</span><br/>
+              </div>
+              <div class="col-xs-5 text-center">
+                <img class="product-img" src="images/logo-xp1.png" />
+              </div>
+            </div>
+          </div>
+            <div class="card card-3">
+              <div class="row">
+                <div class="col-xs-12 product-description-block">
+                  <div class="row">
+                    <div class="col-xs-12 text-center">
+                      <br/>
+                      <span class="title color-primary">XP1</span>
+                    </div>
+                  </div>
+                  <div class="invisible-separator-block-text"></div>
+                  <div class="invisible-separator-block-text"></div>
+                  <p>
+                    El   iniciador XP1 contiene  las características granulométricas , nutricionales y  promotoras  de crecimiento que el camarón  necesita para continuar la cadena nutricional especial del RW0. Es un producto formulado especialmente para este estadio no solo por su forma física sino por sus beneficios nutricionales los cuales fueron desarrollados específicamente para este tamaño del animal y protegiéndolo de las afecciones comunes con los que se enfrenta el camarón en ese estadio. Su composición de ácidos orgánicos, hidrolizados y nucleótidos está diseñado con el objetivo de proteger al camarón en ese proceso de estrés que vive el animal en este estadio
+                  </p>
+                  <br/>
+                  <br/>
+                </div>
+              </div>
+            </div>
+            <div class="card card-3">
+              <div class="row">
+                <div class="col-xs-12 product-description-block">
+                  <div class="row">
+                    <div class="col-xs-12 text-center">
+                      <br/>
+                      <span class="title color-primary">Características:</span>
+                    </div>
+                  </div>
+                  <div class="invisible-separator-block-text"></div>
+                  <div class="invisible-separator-block-text"></div>
+<p>
+  Es un alimento con 35% de proteína de 1.2 mm de diámetro
+</p>  <br/>
+                </div>
+              </div>
+              <br/>
+              <div class="row">
+                <div class="col-xs-12 product-description-block">
+                  <div class="row">
+                    <div class="col-xs-12 text-center">
+                      <br/>
+                      <span class="title color-primary">Suministro:</span>
+                    </div>
+                  </div>
+                  <div class="invisible-separator-block-text"></div>
+                  <div class="invisible-separator-block-text"></div>
+<p>
+  Utilizar a partir del 4.8 gramos hasta los 6.3 gramos, se recomienda suministrar el alimento en comederos a una frecuencia de 3 veces por día.
+o	Por el tamaño del gránulo es necesario, para este período de vida, utilizar comederos adecuados que eviten el desperdicio en el fondo de la piscina.
+
+</p>  <br/>
+                </div>
+              </div>
+            </div>
+            <br/>
+            <div class="card card-3">
+              <div class="row">
+                <div class="col-xs-12 product-description-block">
+                  <div class="row">
+                    <div class="col-xs-12 text-center">
+                      <br/>
+                      <span class="title color-primary">Almacenaje:</span>
+                    </div>
+                  </div>
+                  <div class="invisible-separator-block-text"></div>
+                  <div class="invisible-separator-block-text"></div>
+                    <div class="row">
+                      <div class="col-xs-1 text-center product-bullet">
+                        <span class="dot color-primary">&middot;</span>
+                      </div>
+                      <div class="col-xs-11 product-item">
+                        Producto de uso especializado
+
+                      </div>
+                      <div class="col-xs-1 text-center product-bullet">
+                        <span class="dot color-primary">&middot;</span>
+                      </div>
+                      <div class="col-xs-11 product-item">
+                        El producto debe ser almacenado en un lugar seco y bien ventilado.
+
+                      </div>
+                      <div class="col-xs-1 text-center product-bullet">
+                        <span class="dot color-primary">&middot;</span>
+                      </div>
+                      <div class="col-xs-11 product-item">
+                        Se debe colocar los sacos en pallets de madera para evitar el contacto directo con el piso y con las paredes.
+                      </div>
+                      <div class="col-xs-1 text-center product-bullet">
+                        <span class="dot color-primary">&middot;</span>
+                      </div>
+                      <div class="col-xs-11 product-item">
+                        No es recomendable almacenar el alimento en forma directa con la luz solar, ya que esto produce condensación y cambios de temperaturas en el alimento.
+
+                      </div>
+                      <div class="col-xs-1 text-center product-bullet">
+                        <span class="dot color-primary">&middot;</span>
+                      </div>
+                      <div class="col-xs-11 product-item">
+                        No almacene otros productos junto al alimento balanceado, estos deben estar separados y claramente identificados; para evitar la propagación de roedores o insectos.
+                      </div>
+                    </div>
+                  <br/>
+                </div>
+              </div>
+            </div>
+            <br/>
+
+            <br/>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+        <!--
+        PRODUCT XP PRO
+        -->
+
+        <div id="product-xp-pro" class="ContentView ProductView">
+          <div class="card card-3">
+            <div class="row">
+              <div class="col-xs-7 product-text-block">
+                <div class="invisible-separator-block-text"></div>
+                <span class="color-primary texto">Tamaño de partícula:</span><br/>
+                <span class="color-secondary texto">La presentación del XPRO es en iniciador en 1.2 mm y en 2 mm. de diámetro</span>
+                <div class="invisible-separator-block-text"></div>
+                <span class="color-primary texto">Composición: </span><br/>
+                <span class="color-secondary texto">35%  de proteína, nucleótidos, hidrolizados, ácidos orgánicos</span>
+                <div class="invisible-separator-block-text"></div>
+                <span class="color-primary texto">Características: </span><br/>
+                <span class="color-secondary texto">Probiótico, Premezcla Prime Pro</span><br/>
+              </div>
+              <div class="col-xs-5 text-center">
+                <img class="product-img" src="images/logo-xpro.png" />
+              </div>
+            </div>
+          </div>
+            <div class="card card-3">
+              <div class="row">
+                <div class="col-xs-12 product-description-block">
+                  <div class="row">
+                    <div class="col-xs-12 text-center">
+                      <br/>
+                      <span class="title color-primary">XPRO</span>
+                    </div>
+                  </div>
+                  <div class="invisible-separator-block-text"></div>
+                  <div class="invisible-separator-block-text"></div>
+                  <p>
+                    El XPRO es un alimento especializado 2 en 1 que contiene probiótico en su fórmula, no como cobertura sino en su mezcla. Es un producto que busca proteger al camarón en momentos de mayor estrés y reforzar su sistema inmune a través de una nutrición veterinaria que busca darle además de una mayor sobrevivencia en los eventos al camarón, sostenibilidad en la industria, optando por la prevención de enfermedades y tratamiento de la misma a medicaciones que pueden afectar el medio, la sostenibilidad de la industria o el microambiente. Es un producto que tiene una fórmula complementada con ácidos orgánicos así como hidrolizados y nucleótidos mejorando el perfil nutricional.
+                  </p>
+                  <br/>
+                  <br/>
+                </div>
+              </div>
+            </div>
+            <div class="card card-3">
+              <div class="row">
+                <div class="col-xs-12 product-description-block">
+                  <div class="row">
+                    <div class="col-xs-12 text-center">
+                      <br/>
+                      <span class="title color-primary">XPRO 1.2MM</span>
+                      <br/><br/><br/>
+                      <span class="title color-primary" style="font-size:1.4em">Características:</span>
+                    </div>
+                  </div>
+                  <div class="invisible-separator-block-text"></div>
+                  <div class="invisible-separator-block-text"></div>
+<p>
+  Es un pellet corto de 1.2 mm, se recomienda Utilizar a partir del 0.5 gramos hasta 3.3 gramos.
+</p>  <br/>
+                </div>
+              </div>
+              <br/>
+              <div class="row">
+                <div class="col-xs-12 product-description-block">
+                  <div class="row">
+                    <div class="col-xs-12 text-center">
+                      <br/>
+                      <span style="font-size:1.4em" class="title color-primary">Suministro:</span>
+                    </div>
+                  </div>
+                  <div class="invisible-separator-block-text"></div>
+                  <div class="invisible-separator-block-text"></div>
+<p>
+  Puede ser utilizado en períodos de estrés y eventos: 1 semana  antes, durante y 1 semana después del evento.  Se recomienda suministrar el alimento en comederos a una frecuencia de 3  veces por día.
+</p>  <br/>
+                </div>
+              </div>
+              
+            </div>
+            <br/>
+            <div class="card card-3">
+              <div class="row">
+                <div class="col-xs-12 product-description-block">
+                  <div class="row">
+                    <div class="col-xs-12 text-center">
+                      <br/>
+                      <span class="title color-primary">XPRO 2MM</span>
+                      <br/><br/><br/>
+                      <span class="title color-primary" style="font-size:1.4em">Características:</span>
+                      <br/>
+                      <div class="invisible-separator-block-text"></div>
+                      <p>
+                        Es un pellet de 2 mm. de diámetro, se lo puede utilizar a partir de los 3.3 gramos en adelante
+                      </p>
+                      <br/>
+                      <br/>
+                      <span class="title color-primary" style="font-size:1.4em">Suministro:</span>
+                      <br/>
+                      <div class="invisible-separator-block-text"></div>
+                      <p>
+                        Se recomienda suministrar el alimento en comederos a una frecuencia de 3  veces por día. En períodos de estrés y eventos: 1 semana  antes, durante y 1 semana después del evento.
+                      </p>
+                      <br/>
+                      <span class="title color-primary" style="font-size:1.4em">Almacenaje:</span>
+
+                    </div>
+                  </div>
+                  <div class="invisible-separator-block-text"></div>
+                  <div class="invisible-separator-block-text"></div>
+                    <div class="row">
+                      <div class="col-xs-1 text-center product-bullet">
+                        <span class="dot color-primary">&middot;</span>
+                      </div>
+                      <div class="col-xs-11 product-item">
+                        Producto frágil y de uso especializado.
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-xs-1 text-center product-bullet">
+                        <span class="dot color-primary">&middot;</span>
+                      </div>
+                      <div class="col-xs-11 product-item">
+                        El producto debe ser almacenado en un lugar seco y bien ventilado.
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-xs-1 text-center product-bullet">
+                        <span class="dot color-primary">&middot;</span>
+                      </div>
+                      <div class="col-xs-11 product-item">
+                        Se debe colocar los sacos en pallets de madera para evitar el contacto directo con el piso y con las paredes.
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-xs-1 text-center product-bullet">
+                        <span class="dot color-primary">&middot;</span>
+                      </div>
+                      <div class="col-xs-11 product-item">
+                        No es recomendable almacenar el alimento en forma directa con la luz solar, ya que esto produce condensación y cambios de temperaturas en el alimento.
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-xs-1 text-center product-bullet">
+                        <span class="dot color-primary">&middot;</span>
+                      </div>
+                      <div class="col-xs-11 product-item">
+                        No almacene otros productos junto al alimento balanceado, estos deben estar separados y claramente identificados; para evitar la propagación de roedores o insectos.
+                      </div>
+                    </div>
+                  <br/>
+                </div>
+              </div>
+            </div>
+            <br/>
+
+            <br/>
+        </div>
+
+
+
+
+
+
+
+
+
+                <!--
+                PRODUCT XP2
+                -->
+
+                <div id="product-xp2" class="ContentView ProductView">
+                  <div class="card card-3">
+                    <div class="row">
+                      <div class="col-xs-7 product-text-block">
+                        <div class="invisible-separator-block-text"></div>
+                        <span class="color-primary texto">Tamaño de partícula:</span><br/>
+                        <span class="color-secondary texto">Pellet corto 1.6mm de diámetro</span>
+                        <div class="invisible-separator-block-text"></div>
+                        <span class="color-primary texto">Composición: </span><br/>
+                        <span class="color-secondary texto">35% de proteína, nucleótidos, hidrolizados, ácidos orgánicos</span>
+                        <div class="invisible-separator-block-text"></div>
+                        <span class="color-primary texto">Características: </span><br/>
+                        <span class="color-secondary texto">Premezcla Prime 2</span><br/>
+                      </div>
+                      <div class="col-xs-5 text-center">
+                        <img class="product-img" src="images/logo-xp2.png" />
+                      </div>
+                    </div>
+                  </div>
+                    <div class="card card-3">
+                      <div class="row">
+                        <div class="col-xs-12 product-description-block">
+                          <div class="row">
+                            <div class="col-xs-12 text-center">
+                              <br/>
+                              <span class="title color-primary">XP2</span>
+                            </div>
+                          </div>
+                          <div class="invisible-separator-block-text"></div>
+                          <div class="invisible-separator-block-text"></div>
+                          <p>
+                            El alimento iniciador  XP2 fue desarrollado para suplir las necesidades del camarón en ese estadío, con fuertes promotores de crecimiento y protección para que se desarrolle sin novedades. Es un alimento pensado para que la transición en la alimentación sea más adecuada y formulado con ingredientes como hidrolizados, nucleótidos, ácidos orgánicos en un balance fortalecido que permite al camarón crecer de una manera más eficiente.
+                          </p>
+                          <br/>
+                          <br/>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card card-3">
+                      <div class="row">
+                        <div class="col-xs-12 product-description-block">
+                          <div class="row">
+                            <div class="col-xs-12 text-center">
+                              <br/>
+                              <span class="title color-primary">Características:</span>
+                            </div>
+                          </div>
+                          <div class="invisible-separator-block-text"></div>
+                          <div class="invisible-separator-block-text"></div>
+        <p>
+          Tiene la forma de pellet corto  de 1.6 mm, y con 35% de proteína
+        </p>  <br/>
+                        </div>
+                      </div>
+                      <br/>
+                      <div class="row">
+                        <div class="col-xs-12 product-description-block">
+                          <div class="row">
+                            <div class="col-xs-12 text-center">
+                              <br/>
+                              <span class="title color-primary">Suministro:</span>
+                            </div>
+                          </div>
+                          <div class="invisible-separator-block-text"></div>
+                          <div class="invisible-separator-block-text"></div>
+        <p>
+          Debe ser suministrado desde 6.3 gramos hasta los 8 gramos de peso vivo y utilizando comederos, a una frecuencia no menor de 3 veces por día.
+
+        </p>  <br/>
+                        </div>
+                      </div>
+                    </div>
+                    <br/>
+                    <div class="card card-3">
+                      <div class="row">
+                        <div class="col-xs-12 product-description-block">
+                          <div class="row">
+                            <div class="col-xs-12 text-center">
+                              <br/>
+                              <span class="title color-primary">Almacenaje:</span>
+                            </div>
+                          </div>
+                          <div class="invisible-separator-block-text"></div>
+                          <div class="invisible-separator-block-text"></div>
+                            <div class="row">
+                              <div class="col-xs-1 text-center product-bullet">
+                                <span class="dot color-primary">&middot;</span>
+                              </div>
+                              <div class="col-xs-11 product-item">
+                                El producto debe ser almacenado en un lugar seco y bien ventilado.
+                              </div>
+                              <div class="col-xs-1 text-center product-bullet">
+                                <span class="dot color-primary">&middot;</span>
+                              </div>
+                              <div class="col-xs-11 product-item">
+                                Se debe colocar los sacos en pallets de madera para evitar el contacto directo con el piso y con las paredes.
+                              </div>
+                              <div class="col-xs-1 text-center product-bullet">
+                                <span class="dot color-primary">&middot;</span>
+                              </div>
+                              <div class="col-xs-11 product-item">
+                                No es recomendable almacenar el alimento en forma directa con la luz solar, ya que esto produce condensación y cambios de temperaturas en el alimento.
+
+
+                              </div>
+                              <div class="col-xs-1 text-center product-bullet">
+                                <span class="dot color-primary">&middot;</span>
+                              </div>
+                              <div class="col-xs-11 product-item">
+                                No almacene otros productos junto al alimento balanceado, estos deben estar separados y claramente identificados; para evitar la propagación de roedores ó insectos.
+
+                              </div>
+                              <div class="col-xs-1 text-center product-bullet">
+                                <span class="dot color-primary">&middot;</span>
+                              </div>
+                              <div class="col-xs-11 product-item">
+                                Se recomienda usar comederos y no menos de 2 dosis por día
+                              </div>
+                            </div>
+                          <br/>
+                        </div>
+                      </div>
+                    </div>
+
+                    <br/>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+                <!--
+                PRODUCT EL MOLINO
+                -->
+
+                <div id="product-elmolino" class="ContentView ProductView">
+                    <div class="card card-3">
+                      <div class="row">
+                        <div class="col-xs-7 product-text-block">
+                          <div class="invisible-separator-block-text"></div>
+                          <span class="color-primary texto">Tamaño de partícula:</span><br/>
+                          <span class="color-secondary texto">Pellet 2mm de diámetro</span>
+
+                        <br/>
+                        </div>
+                        <div class="col-xs-5 text-center">
+                          <img class="product-img" src="images/logo-elmolino.png" />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card card-3">
+                      <div class="row">
+                        <div class="col-xs-12 product-description-block">
+                          <div class="row">
+                            <div class="col-xs-12 text-center">
+                              <br/>
+                              <span class="title color-primary">El Molino</span>
+                            </div>
+                          </div>
+                          <div class="invisible-separator-block-text"></div>
+                          <div class="invisible-separator-block-text"></div>
+                          <p>
+                            Nuestro alimento <strong>EL MOLINO</strong> está formulado con todos los nutrientes necesarios para el mantenimiento y buen crecimiento del camarón en las diferentes etapas durante la corrido en producciones semi intensivas.
+                          </p>
+                          <br/>
+                          <br/>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card card-3">
+
+                      <div class="row">
+                        <div class="col-xs-12 product-description-block">
+                          <div class="row">
+                            <div class="col-xs-12 text-center">
+                              <br/>
+                              <span class="title color-primary">Suministro:</span>
+                            </div>
+                          </div>
+                          <div class="invisible-separator-block-text"></div>
+                          <div class="invisible-separator-block-text"></div>
+        <p>
+          Utilice El Molino en juveniles a partir de los 8 gramos hasta su cosecha para cultivos extensivos y semi intensivos
+
+
+        </p>  <br/>
+                        </div>
+                      </div>
+                    </div>
+                    <br/>
+                    <div class="card card-3">
+                      <div class="row">
+                        <div class="col-xs-12 product-description-block">
+                          <div class="row">
+                            <div class="col-xs-12 text-center">
+                              <br/>
+                              <span class="title color-primary">Características del Producto
+:</span>
+                            </div>
+                          </div>
+                          <div class="invisible-separator-block-text"></div>
+                          <div class="invisible-separator-block-text"></div>
+                            <div class="row">
+                              <div class="col-xs-1 text-center product-bullet">
+                                <span class="dot color-primary">&middot;</span>
+                              </div>
+                              <div class="col-xs-11 product-item">
+                              Diseñados para biomasas no mayores de 100.000 animales por hectárea
+
+                              </div>
+                              <div class="col-xs-1 text-center product-bullet">
+                                <span class="dot color-primary">&middot;</span>
+                              </div>
+                              <div class="col-xs-11 product-item">
+                                Pellets de 2.0 mm de diámetro buscando una mejor presentación y dispersión del producto así como más pellets por gramo
+
+                              </div>
+                              <div class="col-xs-1 text-center product-bullet">
+                                <span class="dot color-primary">&middot;</span>
+                              </div>
+                              <div class="col-xs-11 product-item">
+                                El producto viene en presentaciones de 22%, 28% y 35% de proteína
+                              </div>
+                            </div>
+                          <br/>
+                        </div>
+                      </div>
+                    </div>
+                    <br/>
+
+                    <br/>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                <!--
+                                PRODUCT EXTRAPRIME
+                                -->
+
+                                <div id="product-extraprime" class="ContentView ProductView">
+                                  <div class="card card-3">
+                                    <div class="row">
+                                      <div class="col-xs-7 product-text-block">
+                                        <div class="invisible-separator-block-text"></div>
+                                        <span class="color-primary texto">Tamaño de partícula:</span><br/>
+                                        <span class="color-secondary texto">Pellet 2mm de diámetro</span>
+                                        <div class="invisible-separator-block-text"></div>
+                                        <span class="color-primary texto">Composición: </span><br/>
+                                        <span class="color-secondary texto">35% de proteína, nucleótidos, hidrolizados, ácidos orgánicos</span>
+                                        <div class="invisible-separator-block-text"></div>
+                                        <span class="color-primary texto">Características: </span><br/>
+                                        <span class="color-secondary texto">Premezcla Prime </span><br/>
+                                      </div>
+                                      <div class="col-xs-5 text-center">
+                                        <img class="product-img" src="images/logo-extraprime.png" />
+                                      </div>
+                                    </div>
+                                  </div>
+                                    <div class="card card-3">
+                                      <div class="row">
+                                        <div class="col-xs-12 product-description-block">
+                                          <div class="row">
+                                            <div class="col-xs-12 text-center">
+                                              <br/>
+                                              <span class="title color-primary">EXTRA PRIME</span>
+                                            </div>
+                                          </div>
+                                          <div class="invisible-separator-block-text"></div>
+                                          <div class="invisible-separator-block-text"></div>
+                                          <p>
+                                            Nuestra responsabilidad como Especialistas en Diseño de Dietas para camarones se fundamenta en hacer de esta una actividad sustentable y sostenible, ofreciendo alimentos altamente eficientes y optimizados que le permita llegar a tallas comerciales en el menor tiempo posible.<br/>
+Este es un producto que fortalece al animal y lo nutre con mucha precisión gracias a su perfil de aminoácidos repotenciado y el proceso de reingeniería desarrollado en ALIMENTSA
+<br/>
+De acuerdo a este concepto hemos formulado nuestra dieta Extra Prime, con nutrientes que permiten el reforzamiento del sistema inmune y el crecimiento que proporcionan al camarón mayor resistencia y mejores defensas para afrontar situaciones de estrés.
+                                          </p>
+                                          <br/>
+                                          <br/>
+                                        </div>
+                                      </div>
+                                    </div>
+
+
+
+                                    <br/>
+                                    <div class="card card-3">
+                                      <div class="row">
+                                        <div class="col-xs-12 product-description-block">
+                                          <div class="row">
+                                            <div class="col-xs-12 text-center">
+                                              <br/>
+                                              <span class="title color-primary">Características del Producto:</span>
+                                            </div>
+                                          </div>
+                                          <div class="invisible-separator-block-text"></div>
+                                          <div class="invisible-separator-block-text"></div>
+                                            <div class="row">
+                                              <div class="col-xs-1 text-center product-bullet">
+                                                <span class="dot color-primary">&middot;</span>
+                                              </div>
+                                              <div class="col-xs-11 product-item">
+                                              Son Altamente Eficientes
+
+                                              </div>
+                                              <div class="col-xs-1 text-center product-bullet">
+                                                <span class="dot color-primary">&middot;</span>
+                                              </div>
+                                              <div class="col-xs-11 product-item">
+                                                Contienen un Nivel Proteico Óptimo
+
+                                              </div>
+                                              <div class="col-xs-1 text-center product-bullet">
+                                                <span class="dot color-primary">&middot;</span>
+                                              </div>
+                                              <div class="col-xs-11 product-item">
+                                                Formulados con microingredientes especializados
+                                              </div>
+                                              <div class="col-xs-1 text-center product-bullet">
+                                                <span class="dot color-primary">&middot;</span>
+                                              </div>
+                                              <div class="col-xs-11 product-item">
+                                                Complementados con ácidos orgánicos, nucleótidos de alta gama, e hidrolizados
+                                              </div>
+                                              <div class="col-xs-1 text-center product-bullet">
+                                                <span class="dot color-primary">&middot;</span>
+                                              </div>
+                                              <div class="col-xs-11 product-item">
+                                                Poseen Extra Digestabilidad, en un 25% más digestible
+                                              </div>
+                                              <div class="col-xs-1 text-center product-bullet">
+                                                <span class="dot color-primary">&middot;</span>
+                                              </div>
+                                              <div class="col-xs-11 product-item">
+                                                Es un pellet de 2mm de diámetro con lo que se busca poder contar con más pellets por gramos, una mejor dispersión del producto entre los animales para permitir tallas más uniformes
+                                              </div>
+
+                                              <div class="col-xs-1 text-center product-bullet">
+                                                <span class="dot color-primary">&middot;</span>
+                                              </div>
+                                              <div class="col-xs-11 product-item">
+                                                El producto viene en presentaciones de 28%, 32% y 35% de proteína
+                                              </div>
+                                            </div>
+                                          <br/>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <br/>
+
+
+                                    <div class="card card-3">
+                                      <div class="row">
+                                        <div class="col-xs-12 product-description-block">
+                                          <div class="row">
+                                            <div class="col-xs-12 text-center">
+                                              <br/>
+                                              <span class="title color-primary">Suministro:</span>
+                                            </div>
+                                          </div>
+                                          <div class="invisible-separator-block-text"></div>
+                                          <div class="invisible-separator-block-text"></div>
+                        <p>
+                          Debe ser suministrado desde los 8 gramos de peso vivo en adelante, se recomienda utilizar comederos, a una frecuencia no menor de 2 veces por día.
+                        </p>  <br/>
+                                        </div>
+                                      </div>
+                                      <br/>
+                                      <div class="row">
+                                        <div class="col-xs-12 product-description-block">
+                                          <div class="row">
+                                            <div class="col-xs-12 text-center">
+                                              <br/>
+                                              <span class="title color-primary">Almacenaje:</span>
+                                            </div>
+                                          </div>
+                                          <div class="invisible-separator-block-text"></div>
+                                          <div class="invisible-separator-block-text"></div>
+                                            <div class="row">
+                                              <div class="col-xs-1 text-center product-bullet">
+                                                <span class="dot color-primary">&middot;</span>
+                                              </div>
+                                              <div class="col-xs-11 product-item">
+                                              El producto debe ser almacenado en un lugar seco y bien ventilado.
+
+                                              </div>
+                                              <div class="col-xs-1 text-center product-bullet">
+                                                <span class="dot color-primary">&middot;</span>
+                                              </div>
+                                              <div class="col-xs-11 product-item">
+                                                Se debe colocar los sacos en pallets de madera para evitar el contacto directo con el piso y con las paredes.
+
+                                              </div>
+                                              <div class="col-xs-1 text-center product-bullet">
+                                                <span class="dot color-primary">&middot;</span>
+                                              </div>
+                                              <div class="col-xs-11 product-item">
+                                                No almacene otros productos junto al alimento balanceado, estos deben estar separados y claramente identificados; para evitar la propagación de roedores ó insectos.
+                                              </div>
+                                              <div class="col-xs-1 text-center product-bullet">
+                                                <span class="dot color-primary">&middot;</span>
+                                              </div>
+                                              <div class="col-xs-11 product-item">
+                                                Se recomienda usar comederos y no menos de 2 dosis por día
+                                              </div>
+                                            </div>
+                                          <br/>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <br/>
+                                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!--
+          ====================== CONTACTOS =============================
+        -->
+        <!--
+          Lista Contactos
+        -->
+        <div id="list-contactos" class="ContentView">
+          <div class="ListView">
+            <div class="ListViewItem" onclick="hideAllAndShow('contactos-duran')">
+              <div class="row">
+                <div class="col-xs-10">
+                  <img class="ListViewItemIcon" src="images/contact-icon1.png" /><span class="ListViewItemText">Matriz Durán</span>
+                </div>
+                <div class="col-xs-2 text-right">
+                  <span class="glyphicon glyphicon-menu-right ListViewItemArrow" aria-hidden="true"></span>
+                </div>
+                <div class="col-xs-12 ListViewItemSeparator"></div>
+              </div>
+            </div>
+            <div class="ListViewItem" onclick="hideAllAndShow('contactos-eloro')">
+              <div class="row">
+                <div class="col-xs-10">
+                  <img class="ListViewItemIcon" src="images/contact-icon1.png" /><span class="ListViewItemText">Matriz Machala</span>
+                </div>
+                <div class="col-xs-2 text-right">
+                  <span class="glyphicon glyphicon-menu-right ListViewItemArrow" aria-hidden="true"></span>
+                </div>
+                <div class="col-xs-12 ListViewItemSeparator"></div>
+              </div>
+            </div>
+            <div class="ListViewItem" onclick="hideAllAndShow('contactos-hualtaco')">
+              <div class="row">
+                <div class="col-xs-10">
+                  <img class="ListViewItemIcon" src="images/contact-icon1.png" /><span class="ListViewItemText">Hualtaco</span>
+                </div>
+                <div class="col-xs-2 text-right">
+                  <span class="glyphicon glyphicon-menu-right ListViewItemArrow" aria-hidden="true"></span>
+                </div>
+                <div class="col-xs-12 ListViewItemSeparator"></div>
+              </div>
+            </div>
+            <div class="ListViewItem" onclick="hideAllAndShow('contactos-pedernales')">
+              <div class="row">
+                <div class="col-xs-10">
+                  <img class="ListViewItemIcon" src="images/contact-icon1.png" /><span class="ListViewItemText">Pedernales</span>
+                </div>
+                <div class="col-xs-2 text-right">
+                  <span class="glyphicon glyphicon-menu-right ListViewItemArrow" aria-hidden="true"></span>
+                </div>
+                <div class="col-xs-12 ListViewItemSeparator"></div>
+              </div>
+            </div>
+            <div class="ListViewItem" onclick="hideAllAndShow('contactos-bahia')">
+              <div class="row">
+                <div class="col-xs-10">
+                  <img class="ListViewItemIcon" src="images/contact-icon1.png" /><span class="ListViewItemText">Bahía</span>
+                </div>
+                <div class="col-xs-2 text-right">
+                  <span class="glyphicon glyphicon-menu-right ListViewItemArrow" aria-hidden="true"></span>
+                </div>
+                <div class="col-xs-12 ListViewItemSeparator"></div>
+              </div>
+            </div>
+          </div>
+          <div style="width:100%;text-align:center">
+            <img src="images/logo-camaroneros.png" style="width:80%;"/>
+          </div>
+        </div>
+
+
+        <!--
+          Contactos Duran
+        -->
+        <div id="contactos-duran" class="ContentView">
+          <div class="TitleView">
+            Matriz Durán
+          </div>
+
+          <iframe id="iframeDuran" src="" class="MapView" width="600" height="450" frameborder="0" style="border:0" allowfullscreen="false"></iframe>
+
+          <div class="contact-information">
+            <div class="row ListViewItemSeparator">
+              <div class="col-xs-3 text-center">
+                <img class="contact-bullet" src="images/contact-icon1.png"/>
+              </div>
+              <div class="col-xs-9">
+                <span class="contact-text">
+                  Km 6.5 Vía Durán - Tambo
+                </span>
+              </div>
+            </div>
+            <div class="row ListViewItemSeparator">
+              <div class="col-xs-3 text-center">
+                <img class="contact-bullet" src="images/contact-icon2.png"/>
+              </div>
+              <div class="col-xs-9">
+                <span class="contact-text">
+                  <a href="tel:043711290">043711290 - Ext. 203</a>
+                </span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-3 text-center">
+                <img class="contact-bullet" src="images/contact-icon3.png"/>
+              </div>
+              <div class="col-xs-9">
+                <span class="contact-text">
+                  <a href="mailto:serviclientes@alimentsa.com">serviclientes@alimentsa.com</a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--
+          Contactos El Oro
+        -->
+        <div id="contactos-eloro" class="ContentView">
+          <div class="TitleView">
+            Matriz Machala
+          </div>
+          <iframe id="iframeMachala" src="" class="MapView" width="600" height="450" frameborder="0" style="border:0" allowfullscreen="false"></iframe>
+          <div class="contact-information">
+            <div class="row ListViewItemSeparator">
+              <div class="col-xs-3 text-center">
+                <img class="contact-bullet" src="images/contact-icon1.png"/>
+              </div>
+              <div class="col-xs-9">
+                <span class="contact-text">
+                  Séptima Sur entre Malecón y Apolinario Gálvez s/n
+                </span>
+              </div>
+            </div>
+            <div class="row ListViewItemSeparator">
+              <div class="col-xs-3 text-center">
+                <img class="contact-bullet" src="images/contact-icon2.png"/>
+              </div>
+              <div class="col-xs-9">
+                <span class="contact-text">
+                  <a href="tel:073701810">073701810 - Ext. 302</a>
+                </span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-3 text-center">
+                <img class="contact-bullet" src="images/contact-icon3.png"/>
+              </div>
+              <div class="col-xs-9">
+                <span class="contact-text">
+                  <a href="mailto:machala@alimentsa.com">machala@alimentsa.com</a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--
+          Contactos Hualtaco
+        -->
+        <div id="contactos-hualtaco" class="ContentView">
+          <div class="TitleView">
+            Hualtaco
+          </div>
+          <iframe id="iframeHualtaco" src="" class="MapView" width="600" height="450" frameborder="0" style="border:0" allowfullscreen="false"></iframe>
+          <div class="contact-information">
+            <div class="row ListViewItemSeparator">
+              <div class="col-xs-3 text-center">
+                <img class="contact-bullet" src="images/contact-icon1.png"/>
+              </div>
+              <div class="col-xs-9">
+                <span class="contact-text">
+                  Callejón B s/n y Pedro Rodríguez
+                </span>
+              </div>
+            </div>
+            <div class="row ListViewItemSeparator">
+              <div class="col-xs-3 text-center">
+                <img class="contact-bullet" src="images/contact-icon2.png"/>
+              </div>
+              <div class="col-xs-9">
+                <span class="contact-text">
+                  <a href="tel:072148587">072148587</a>
+                </span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-3 text-center">
+                <img class="contact-bullet" src="images/contact-icon3.png"/>
+              </div>
+              <div class="col-xs-9">
+                <span class="contact-text">
+                  <a href="mailto:hualtaco@alimentsa.com">hualtaco@alimentsa.com</a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--
+          Contactos Pedernales
+        -->
+        <div id="contactos-pedernales" class="ContentView">
+          <div class="TitleView">
+            Pedernales
+          </div>
+          <iframe id="iframePedernales" src="" class="MapView" width="600" height="450" frameborder="0" style="border:0" allowfullscreen="false"></iframe>
+          <div class="contact-information">
+            <div class="row ListViewItemSeparator">
+              <div class="col-xs-3 text-center">
+                <img class="contact-bullet" src="images/contact-icon1.png"/>
+              </div>
+              <div class="col-xs-9">
+                <span class="contact-text">
+                  Km 1.5 Vía Pedernales - Chamanga
+                </span>
+              </div>
+            </div>
+            <div class="row ListViewItemSeparator">
+              <div class="col-xs-3 text-center">
+                <img class="contact-bullet" src="images/contact-icon2.png"/>
+              </div>
+              <div class="col-xs-9">
+                <span class="contact-text">
+                  <a href="tel:0988289716">0988289716</a>
+                </span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-3 text-center">
+                <img class="contact-bullet" src="images/contact-icon3.png"/>
+              </div>
+              <div class="col-xs-9">
+                <span class="contact-text">
+                  <a href="mailto:peedernales@alimentsa.com">peedernales@alimentsa.com</a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+        <!--
+          Contactos Bahia
+        -->
+        <div id="contactos-bahia" class="ContentView">
+          <div class="TitleView">
+            Bahía
+          </div>
+          <iframe id="iframeBahia" src="" class="MapView" width="600" height="450" frameborder="0" style="border:0" allowfullscreen="false"></iframe>
+          <div class="contact-information">
+            <div class="row ListViewItemSeparator">
+              <div class="col-xs-3 text-center">
+                <img class="contact-bullet" src="images/contact-icon1.png"/>
+              </div>
+              <div class="col-xs-9">
+                <span class="contact-text">
+                  Av. César Ruperti diagonal a la Casa Judicial
+                </span>
+              </div>
+            </div>
+            <div class="row ListViewItemSeparator">
+              <div class="col-xs-3 text-center">
+                <img class="contact-bullet" src="images/contact-icon2.png"/>
+              </div>
+              <div class="col-xs-9">
+                <span class="contact-text">
+                  <a href="tel:05239484">05239484</a>
+                </span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-3 text-center">
+                <img class="contact-bullet" src="images/contact-icon3.png"/>
+              </div>
+              <div class="col-xs-9">
+                <span class="contact-text">
+                  <a href="mailto:bahia@alimentsa.com">bahia@alimentsa.com</a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+      </div>
+      <div class="content-fix-bottom"></div>
+    </div>
+
+    <div class="row top-nav-wrapper">
+      <div id="btnBack" class="col-xs-2 top-nav-action-left" onclick="backAction()">
+        <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+      </div>
+      <div class="col-xs-8 top-nav-title">
+        <span>Alimentsa</span>
+      </div>
+      <div class="col-xs-2 text-center">
+        <img src="images/icon-toolbar.png" style="height: 35px;width: auto;margin-top: 10px;"/>
+      </div>
+    </div>
+
+    <div class="bottom-nav-wrapper">
+      <div class="row">
+        <div class="col-xs-4 bottom-nav-item active" rel="0">
+          <img class="inactive" src="images/icon-calculadora.png" />
+          <img class="active" src="images/icon-calculadora-active.png" />
+        </div>
+        <div class="col-xs-4 bottom-nav-item" rel="1">
+          <img class="inactive" src="images/icon-productos.png" />
+          <img class="active" src="images/icon-productos-active.png" />
+        </div>
+        <div class="col-xs-4 bottom-nav-item no-right-border" rel="2">
+          <img class="inactive" src="images/icon-contactos.png" />
+          <img class="active" src="images/icon-contactos-active.png" />
+        </div>
+      </div>
+    </div>
+
+
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/jquery.shuffleLetters.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript">
+        app.initialize();
+        /*
+        $(function(){
+        	var container = $("#result_calculadora_biomasa");
+          container.shuffleLetters({
+            "text": "2123123.32"
+          });
+        });
+        */
+
+    </script>
+</body>
+
+</html>
