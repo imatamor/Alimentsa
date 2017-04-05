@@ -625,7 +625,7 @@ body.white-bg{
 
 
 .login{
-	/*display: none;*/
+	display: none;
 	position: relative;
 	text-align: center;
 	width:100%;
