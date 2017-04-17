@@ -69,6 +69,7 @@ function fixHeightLogin(){
 function loginAction(){
     $('.loginButton').css('display','none');
     $('.login-error').css('display','none');
+	$('.login-error-duplicate').css('display','none');
     $('.login-loading').css('display','block');
     var data = {
             'user': $('#txt_user').val(),
@@ -76,7 +77,7 @@ function loginAction(){
         };
         $.post("http://ciancorp.com/alimentsa/services/validateUser.php", data)
             .done(function(submitResponse) {
-                if (submitResponse.status != '0') {
+                if (submitResponse.status == '1') {
                   //save in localStorage
                   localStorage.setItem("logged", "1");
                   //carga exitosa
@@ -93,10 +94,17 @@ function loginAction(){
                   $('body').css('background-image','none');
                   $('body').css('background-image','#E6E6E6');
                 }
-                else{
+                else if (submitResponse.status == '0'){
                   //error  
                   $('.login-loading').css('display','none');
                   $('.login-error').css('display','block');
+                  $('.loginButton').css('display','block');
+                  fixHeightLogin();
+                }
+		else if (submitResponse.status == '2'){
+                  //error  
+                  $('.login-loading').css('display','none');
+                  $('.login-error-duplicate').css('display','block');
                   $('.loginButton').css('display','block');
                   fixHeightLogin();
                 }
