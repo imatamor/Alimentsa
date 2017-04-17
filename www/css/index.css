@@ -683,5 +683,14 @@ body.white-bg{
 	margin-top:13px;
 	display: none;
 }
+.login-error-duplicate{
+	text-align: center;
+	width:80%;
+	margin-left:10%;
+	color:#FFFFFF;
+	font-family: Arial;
+	margin-top:13px;
+	display: none;
+}
 
 
